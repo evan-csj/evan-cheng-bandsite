@@ -4,3 +4,21 @@ $bs-white: #FFFFFF;
 $bs-darkblack: #000000;
 $bs-mercury: #E1E1E1;
 $bs-alabaster: #FAFAFA;
+
+@font-face {
+    font-family: "Avenir Next Regular";
+    src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"),
+         url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Avenir Next Demi";
+    src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"),
+         url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Avenir Next Bold";
+    src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"),
+         url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}

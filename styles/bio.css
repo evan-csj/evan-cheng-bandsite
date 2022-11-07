@@ -1,1 +1,135 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+* {
+  margin: 0;
+  font-family: "Avenir Next Regular";
+}
+
+h1, h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "Avenir Next Bold";
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "Avenir Next Demi";
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+h4, p, a {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+h4 {
+  font-family: "Avenir Next Demi";
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  background-color: #323232;
+}
+header a {
+  color: #FFFFFF;
+}
+
+.about, .gallery, footer {
+  padding: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .about, .gallery, footer {
+    padding: 0 36px;
+  }
+}
+
+main .hero {
+  position: relative;
+  background-image: url(../../assets/images/hero-bio.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 60vw;
+  display: flex;
+  align-items: center;
+}
+main .hero::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: rgba(50, 50, 50, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main .hero h1 {
+  color: #FFFFFF;
+  z-index: 1;
+}
+@media only screen and (min-width: 768px) {
+  main p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer h4, footer p, footer a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.label, .btn {
+  font-size: 10px;
+  line-height: 20px;
+  font-family: "Avenir Next Bold";
+}
+@media only screen and (min-width: 768px) {
+  .label, .btn {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}/*# sourceMappingURL=bio.css.map */
