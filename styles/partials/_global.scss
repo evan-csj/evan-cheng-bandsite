@@ -17,10 +17,36 @@
     }
 }
 
+@mixin width-grid($n) {
+    @include desktop {
+        width: calc($desktop-column * $n + $desktop-gutter * ($n - 1));
+    }
+}
+
+@mixin padding-headline {
+    padding-top: 24px;
+    padding-right: 0;
+    padding-bottom: 16px;
+    padding-left: 16px;
+
+    @include tablet {
+        padding-top: 48px;
+        padding-right: 0;
+        padding-bottom: 36px;
+        padding-left: 36px;
+    }
+
+    @include desktop {
+        padding-left: 0;
+        @include width-grid(12);
+    }
+}
+
 h1, h2 {
     font-size: 24px;
     line-height: 32px;
     font-family: "Avenir Next Bold";
+    @include padding-headline();
 }
 
 h1 {
@@ -68,9 +94,6 @@ li {
     list-style: none;
 }
 
-// img {
-// }
-
 header {
     background-color: $bs-black;
 
@@ -79,12 +102,12 @@ header {
     }
 }
 
-.about, .gallery, footer {
-    padding: 0 16px;
-    @include tablet {
-        padding: 0 36px;
-    }
-}
+// .about, .gallery, footer {
+//     padding: 0 16px;
+//     @include tablet {
+//         padding: 0 36px;
+//     }
+// }
 
 main {
     .hero {
@@ -97,6 +120,7 @@ main {
         height: 60vw;
 
         display: flex;
+        justify-content: center;
         align-items: center;
 
         &::before {
@@ -125,11 +149,18 @@ main {
 }
 
 footer {
+    width: 100%;
+    background-color: $bs-black;
+
     h4, p, a {
         @include tablet {
             font-size: 14px;
             line-height: 20px;
         }
+    }
+
+    * {
+        color: $bs-white;
     }
 }
 
