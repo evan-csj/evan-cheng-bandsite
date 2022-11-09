@@ -5,16 +5,16 @@ $bs-darkblack: #000000;
 $bs-mercury: #E1E1E1;
 $bs-alabaster: #FAFAFA;
 
-$desktop-margin: auto;
+// $desktop-margin: auto;
 $desktop-column: 63px;
 $desktop-gutter: 24px;
 
 $tablet-margin: 36px;
-$tablet-column: auto;
+$tablet-column: calc((100% - 72px - 24px * 11) / 12);
 $tablet-gutter: 24px;
 
 $mobile-margin: 16px;
-$mobile-column: auto;
+// $mobile-column: auto;
 $mobile-gutter: 16px;
 
 @font-face {
