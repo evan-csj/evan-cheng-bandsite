@@ -55,23 +55,6 @@ h1, h2 {
   font-size: 24px;
   line-height: 32px;
   font-family: "Avenir Next Bold";
-  padding-top: 24px;
-  padding-right: 0;
-  padding-bottom: 16px;
-  padding-left: 16px;
-}
-@media only screen and (min-width: 768px) {
-  h1, h2 {
-    padding-top: 48px;
-    padding-right: 0;
-    padding-bottom: 36px;
-    padding-left: 36px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  h1, h2 {
-    padding-left: 0;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -88,25 +71,95 @@ h1, h2 {
   }
 }
 
-h3 {
+main .about__quote-name, main .about__quote-content, h3 {
   font-size: 14px;
   line-height: 22px;
   font-family: "Avenir Next Demi";
 }
 @media only screen and (min-width: 768px) {
-  h3 {
+  main .about__quote-name, main .about__quote-content, h3 {
     font-size: 24px;
     line-height: 32px;
   }
 }
 
-h4, p, a {
+p, footer h4, footer p, footer a {
   font-size: 13px;
   line-height: 18px;
 }
 
-h4 {
-  font-family: "Avenir Next Demi";
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer h4, footer p, footer a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+h1 {
+  padding-top: 24px;
+  padding-right: 0;
+  padding-bottom: 16px;
+  padding-left: 0;
+  margin-left: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+    margin-left: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  h1 {
+    margin-left: 0;
+  }
+}
+
+h2 {
+  padding-top: 24px;
+  padding-right: 0;
+  padding-bottom: 16px;
+  padding-left: 0;
+  margin-left: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+    margin-left: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  h2 {
+    margin-left: 0;
+  }
+}
+
+h3 {
+  padding-top: 24px;
+  padding-right: 0;
+  padding-bottom: 16px;
+  padding-left: 0;
+  margin-left: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+    margin-left: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  h3 {
+    margin-left: 0;
+  }
 }
 
 a {
@@ -124,7 +177,7 @@ li {
 header {
   background-color: #323232;
 }
-header a {
+header * {
   color: #FFFFFF;
 }
 
@@ -132,16 +185,12 @@ footer {
   width: 100%;
   background-color: #323232;
 }
-@media only screen and (min-width: 768px) {
-  footer h4, footer p, footer a {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
 footer * {
   color: #FFFFFF;
 }
-
+footer h4 {
+  font-family: "Avenir Next Demi";
+}
 .label, .btn {
   font-size: 10px;
   line-height: 20px;
@@ -154,6 +203,25 @@ footer * {
   }
 }
 
+main * {
+  color: #323232;
+}
+@media only screen and (min-width: 1280px) {
+  main h2 {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  main h2 {
+    width: calc((100% - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  main h2 {
+    width: 1020px;
+  }
+}
 main .hero {
   position: relative;
   background-image: url(../../assets/images/hero-bio.jpg);
@@ -182,34 +250,98 @@ main .hero::before {
 main .hero h1 {
   color: #FFFFFF;
   z-index: 1;
-  width: auto;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1280px) {
+  main .hero h1 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
   main .hero h1 {
     width: calc((100% - 72px - 264px) / 12 * 12 + 264px);
   }
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
   main .hero h1 {
     width: 1020px;
   }
 }
-@media only screen and (min-width: 768px) {
-  main p {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
-main .about img {
-  width: auto;
+main .about h3, main .about img, main .about .about__description, main .about .about__quote {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 @media only screen and (min-width: 768px) {
-  main .about img {
+  main .about h3, main .about img, main .about .about__description, main .about .about__quote {
     width: calc((100% - 72px - 264px) / 12 * 10 + 216px);
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .about img {
+  main .about h3, main .about img, main .about .about__description, main .about .about__quote {
     width: 846px;
   }
+}
+@media only screen and (min-width: 768px) {
+  main .about h3, main .about img, main .about .about__description, main .about .about__quote {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+main .about__quote {
+  padding: 0;
+  padding-top: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .about__quote {
+    padding-top: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .about__quote-content {
+    width: 80%;
+  }
+}
+main .about__quote-name {
+  padding: 12px 0 0 0;
+}
+@media only screen and (min-width: 768px) {
+  main .about__quote-name {
+    font-size: 20px;
+    padding: 18px 0 0 0;
+  }
+}
+main .about__description {
+  padding: 0;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .about__description {
+    padding-bottom: 36px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .about__description {
+    flex-direction: row;
+    -moz-column-gap: 36px;
+         column-gap: 36px;
+  }
+}
+main .about h3, main .about img {
+  display: block;
+}
+main .gallery {
+  background-color: #FAFAFA;
+}
+main .gallery .container {
+  display: flex;
+  flex-direction: column;
+}
+main .gallery .container img {
+  margin: 0 16px;
 }/*# sourceMappingURL=bio.css.map */

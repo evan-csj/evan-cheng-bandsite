@@ -6,28 +6,27 @@
     font-family: "Avenir Next Regular";
 }
 
-h1, h2 {
+%page-header, %section-header {
     font-size: 24px;
     line-height: 32px;
     font-family: "Avenir Next Bold";
-    @include padding-headline();
 }
 
-h1 {
+%page-header {
     @include tablet {
         font-size: 60px;
         line-height: 68px;
     }
 }
 
-h2 {
+%section-header {
     @include tablet {
         font-size: 36px;
         line-height: 44px;
     }
 }
 
-h3 {
+%subheader {
     font-size: 14px;
     line-height: 22px;
     font-family: "Avenir Next Demi";
@@ -37,13 +36,42 @@ h3 {
     }
 }
 
-h4, p, a {
+%body-copy, %footer-copy {
     font-size: 13px;
     line-height: 18px;
 }
 
-h4 {
-    font-family: "Avenir Next Demi";
+%body-copy {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+%footer-copy {
+    @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+h1 {
+    @extend %page-header;
+    @include padding-headline();
+}
+
+h2 {
+    @extend %section-header;
+    @include padding-headline();
+}
+
+h3 {
+    @extend %subheader;
+    @include padding-headline();
+}
+
+p {
+    @extend %body-copy;
 }
 
 a {
@@ -61,7 +89,7 @@ li {
 header {
     background-color: $bs-black;
 
-    a {
+    * {
         color: $bs-white;
     }
 }
@@ -70,15 +98,16 @@ footer {
     width: 100%;
     background-color: $bs-black;
 
-    h4, p, a {
-        @include tablet {
-            font-size: 14px;
-            line-height: 20px;
-        }
-    }
-
     * {
         color: $bs-white;
+    }
+
+    h4 {
+        font-family: "Avenir Next Demi";
+    }
+
+    h4, p, a {
+        @extend %footer-copy;
     }
 }
 

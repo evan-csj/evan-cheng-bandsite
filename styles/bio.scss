@@ -2,14 +2,18 @@
 @import "./partials/mixins";
 @import "./partials/global";
 
-// .about, .gallery, footer {
-//     padding: 0 16px;
-//     @include tablet {
-//         padding: 0 36px;
-//     }
-// }
-
 main {
+    * {
+        color: $bs-black;
+    }
+
+    h2 {
+        @include desktop {
+            @include width-grid(12);
+            margin: 0 auto;
+        }
+    }
+
     .hero {
         position: relative;
         background-image: url(../../assets/images/hero-bio.jpg);
@@ -21,7 +25,7 @@ main {
 
         display: flex;
         align-items: center;
-        
+
         @include desktop {
             justify-content: center;
         }
@@ -40,20 +44,74 @@ main {
         h1 {
             color: $bs-white;
             z-index: 1;
-            @include width-grid(12);
-        }
-    }
-
-    p {
-        @include tablet {
-            font-size: 14px;
-            line-height: 22px;
+            @include desktop {
+                @include width-grid(12);
+            }
         }
     }
 
     .about {
-        img {
+        %about-content {
+            box-sizing: border-box;
             @include width-grid(10);
+            padding-left: $mobile-margin;
+            padding-right: $mobile-margin;
+            @include tablet {
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0 auto;
+            }
+        }
+
+        &__quote {
+            @extend %about-content;
+            @include padding-component($top: true, $bottom: false);
+            
+            &-content {
+                @extend %subheader;
+                @include desktop {
+                    width: 80%;
+                }
+            }
+            
+            &-name {
+                @extend %subheader;
+                padding: 12px 0 0 0;
+                @include tablet {
+                    font-size: 20px;
+                    padding: 18px 0 0 0;
+                }
+            }
+        }
+
+        &__description {
+            @include padding-component($top: false, $bottom: true);
+            @extend %about-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 16px;
+
+            @include tablet {
+                flex-direction: row;
+                column-gap: 36px;
+            }
+        }
+
+        h3, img {
+            display: block;
+            @extend %about-content;
+        }
+    }
+
+    .gallery {
+        background-color: $bs-alabaster;
+        .container {
+            display: flex;
+            flex-direction: column;
+            img {
+                margin: 0 16px;
+            }
         }
     }
 }
