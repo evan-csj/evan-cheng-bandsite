@@ -1,56 +1,9 @@
-@use "./variables" as *;
+@import "./variables";
+@import "./mixins";
 
 * {
     margin: 0;
     font-family: "Avenir Next Regular";
-}
-
-@mixin tablet {
-    @media only screen and (min-width: 768px) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media only screen and (min-width: 1280px) {
-        @content;
-    }
-}
-
-@mixin width-grid($n) {
-    width: auto;
-    @include tablet {
-        width: calc($tablet-column * $n + $tablet-gutter * ($n - 1));
-    }
-    @include desktop {
-        width: calc($desktop-column * $n + $desktop-gutter * ($n - 1));
-    }
-}
-
-@mixin width-tablet($n) {
-    width: calc($tablet-column * $n + $tablet-gutter * ($n - 1));
-}
-
-@mixin width-desktop($n) {
-    width: calc($desktop-column * $n + $desktop-gutter * ($n - 1));
-}
-
-@mixin padding-headline {
-    padding-top: 24px;
-    padding-right: 0;
-    padding-bottom: 16px;
-    padding-left: 16px;
-
-    @include tablet {
-        padding-top: 48px;
-        padding-right: 0;
-        padding-bottom: 36px;
-        padding-left: 36px;
-    }
-
-    @include desktop {
-        padding-left: 0;
-    }
 }
 
 h1, h2 {
