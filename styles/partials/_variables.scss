@@ -10,12 +10,15 @@ $desktop-column: 63px;
 $desktop-gutter: 24px;
 
 $tablet-margin: 36px;
-$tablet-column: calc((100% - 72px - 24px * 11) / 12);
+$tablet-column: calc((100vw - 72px - 24px * 11) / 12);
 $tablet-gutter: 24px;
 
 $mobile-margin: 16px;
 // $mobile-column: auto;
 $mobile-gutter: 16px;
+
+$n-col-img: 4;
+$width-gallery-img: calc($desktop-column * $n-col-img + $desktop-gutter * ($n-col-img - 1));
 
 @font-face {
     font-family: "Avenir Next Regular";

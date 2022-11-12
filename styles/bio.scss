@@ -8,6 +8,7 @@ main {
     }
 
     h2 {
+        align-self: flex-start;
         @include desktop {
             @include width-grid(12);
             margin: 0 auto;
@@ -51,6 +52,10 @@ main {
     }
 
     .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
         %about-content {
             box-sizing: border-box;
             @include width-grid(10);
@@ -106,11 +111,32 @@ main {
 
     .gallery {
         background-color: $bs-alabaster;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         .container {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+            margin: 0 $mobile-margin;
+            gap: 16px;
+            margin-bottom: 16px;
             img {
-                margin: 0 16px;
+                width: 100%;
+            }
+
+            @include tablet {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                margin: 0 $tablet-margin;
+                gap: 24px;
+                margin-bottom: 36px;
+            }
+
+            @include desktop {
+                grid-template-columns: repeat(3, $width-gallery-img);
+                grid-template-rows: repeat(3, 1fr);
             }
         }
     }
