@@ -87,10 +87,7 @@ li {
 }
 
 .icon {
-    height: 20px;
-    @include tablet {
-        height: 28px;
-    }
+    height: 24px;
 }
 
 img.logo {
@@ -180,6 +177,10 @@ header {
                             padding: 18px 0;
                         }
 
+                        &:hover {
+                            color: $bs-white;
+                            border-bottom: $bs-white solid 5px;
+                        }
                     }
 
                     .active {

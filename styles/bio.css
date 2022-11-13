@@ -178,12 +178,7 @@ li {
 }
 
 .icon {
-  height: 20px;
-}
-@media only screen and (min-width: 768px) {
-  .icon {
-    height: 28px;
-  }
+  height: 24px;
 }
 
 img.logo {
@@ -323,6 +318,10 @@ header > div nav ul li .label {
     width: auto;
     padding: 18px 0;
   }
+}
+header > div nav ul li .label:hover {
+  color: #FFFFFF;
+  border-bottom: #FFFFFF solid 5px;
 }
 header > div nav ul li .active {
   font-family: "Avenir Next Bold";
