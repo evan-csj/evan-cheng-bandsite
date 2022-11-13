@@ -104,13 +104,14 @@ p, footer h4, footer p, footer a {
 
 h1 {
   padding-top: 24px;
-  padding-right: 0;
+  padding-right: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
 }
 @media only screen and (min-width: 768px) {
   h1 {
     padding-top: 48px;
+    padding-right: 36px;
     padding-bottom: 36px;
     padding-left: 36px;
   }
@@ -118,18 +119,20 @@ h1 {
 @media only screen and (min-width: 1280px) {
   h1 {
     padding-left: 0;
+    padding-right: 0;
   }
 }
 
 h2 {
   padding-top: 24px;
-  padding-right: 0;
+  padding-right: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
 }
 @media only screen and (min-width: 768px) {
   h2 {
     padding-top: 48px;
+    padding-right: 36px;
     padding-bottom: 36px;
     padding-left: 36px;
   }
@@ -137,18 +140,20 @@ h2 {
 @media only screen and (min-width: 1280px) {
   h2 {
     padding-left: 0;
+    padding-right: 0;
   }
 }
 
 h3 {
   padding-top: 24px;
-  padding-right: 0;
+  padding-right: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
 }
 @media only screen and (min-width: 768px) {
   h3 {
     padding-top: 48px;
+    padding-right: 36px;
     padding-bottom: 36px;
     padding-left: 36px;
   }
@@ -156,6 +161,7 @@ h3 {
 @media only screen and (min-width: 1280px) {
   h3 {
     padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -171,9 +177,18 @@ li {
   list-style: none;
 }
 
+.icon {
+  height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .icon {
+    height: 28px;
+  }
+}
+
 img.logo {
-  max-width: 120px;
-  max-height: 20px;
+  width: 120px;
+  height: 20px;
 }
 
 .label, .btn {
@@ -316,8 +331,9 @@ header > div nav ul li .active {
 }
 
 footer {
-  width: 100%;
   background-color: #323232;
+  display: flex;
+  flex-direction: column;
 }
 footer * {
   color: #FFFFFF;
@@ -325,6 +341,134 @@ footer * {
 footer h4 {
   font-family: "Avenir Next Demi";
 }
+footer .touch {
+  padding-top: 24px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .touch {
+    padding-top: 48px;
+    padding-right: 36px;
+    padding-bottom: 36px;
+    padding-left: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .touch {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .touch {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    align-items: center;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .touch {
+    grid-template-columns: repeat(4, 237px);
+    margin: 0 auto;
+  }
+}
+footer .touch h2 {
+  padding: 0;
+  white-space: nowrap;
+}
+footer .touch div {
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+  flex-wrap: nowrap;
+}
+footer .touch > img {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  footer .touch > img {
+    display: inline-block;
+    justify-self: end;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .touch > img {
+    grid-column: 4/5;
+  }
+}
+footer .booking {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking {
+    padding-left: 36px;
+    padding-right: 36px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking {
+    padding: 0;
+    grid-template-columns: repeat(4, 237px);
+    margin: 0 auto;
+  }
+}
+footer .booking__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking__contact {
+    row-gap: 36px;
+  }
+}
+footer .copy-right {
+  padding: 48px 16px 24px 16px;
+}
+footer .copy-right img {
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .copy-right {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  footer .copy-right {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  footer .copy-right {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .copy-right img {
+    display: none;
+  }
+}
+
 main * {
   color: #323232;
 }

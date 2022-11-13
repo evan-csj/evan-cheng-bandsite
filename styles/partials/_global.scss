@@ -86,9 +86,16 @@ li {
     list-style: none;
 }
 
+.icon {
+    height: 20px;
+    @include tablet {
+        height: 28px;
+    }
+}
+
 img.logo {
-    max-width: 120px;
-    max-height: 20px;
+    width: 120px;
+    height: 20px;
 }
 
 .label, .btn {
@@ -187,8 +194,9 @@ header {
 }
 
 footer {
-    width: 100%;
     background-color: $bs-black;
+    display: flex;
+    flex-direction: column;
 
     * {
         color: $bs-white;
@@ -200,5 +208,95 @@ footer {
 
     h4, p, a {
         @extend %footer-copy;
+    }
+
+    .touch {
+        @include padding-headline();
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 16px;
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            align-items: center;
+            column-gap: 24px;
+        }
+
+        @include desktop {
+            grid-template-columns: repeat(4, $width-footer);
+            margin: 0 auto;
+        }
+
+        h2 {
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        div {
+            display: flex;
+            justify-content: flex-start;
+            column-gap: 36px;
+            flex-wrap: nowrap;
+        }
+
+        &>img {
+            display: none;
+            @include tablet {
+                display: inline-block;
+                justify-self: end;
+            }
+            @include desktop {
+                grid-column: 4 / 5;
+            }
+        }
+    }
+
+    .booking {
+        padding-left: 16px;
+        padding-right: 16px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 16px;
+
+        @include tablet {
+            padding-left: 36px;
+            padding-right: 36px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            column-gap: 24px;
+        }
+
+        @include desktop {
+            padding: 0;
+            grid-template-columns: repeat(4, $width-footer);
+            margin: 0 auto;
+        }
+
+        &__contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 16px;
+            @include tablet {
+                row-gap: 36px;
+            }
+        }
+    }
+
+    .copy-right {
+        padding: 48px 16px 24px 16px;
+        img {
+            padding-bottom: 16px;
+        }
+        @include tablet {
+            @include width-grid(12);
+            margin: 0 auto;
+            img {
+                display: none;
+            }
+        }
     }
 }

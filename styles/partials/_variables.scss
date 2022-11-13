@@ -17,8 +17,8 @@ $mobile-margin: 16px;
 // $mobile-column: auto;
 $mobile-gutter: 16px;
 
-$n-col-img: 4;
-$width-gallery-img: calc($desktop-column * $n-col-img + $desktop-gutter * ($n-col-img - 1));
+$width-gallery-img: calc($desktop-column * 4 + $desktop-gutter * 3);
+$width-footer: calc($desktop-column * 3 + $desktop-gutter * 2);
 
 @font-face {
     font-family: "Avenir Next Regular";
