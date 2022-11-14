@@ -386,8 +386,8 @@ footer .touch h2 {
 footer .touch div {
   display: flex;
   justify-content: flex-start;
-  -moz-column-gap: 36px;
-       column-gap: 36px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
   flex-wrap: nowrap;
 }
 footer .touch > img {

@@ -95,11 +95,11 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            row-gap: 16px;
+            row-gap: $padding-mobile;
 
             @include tablet {
                 flex-direction: row;
-                column-gap: 36px;
+                column-gap: $padding-tablet;
             }
         }
 
@@ -120,8 +120,8 @@ main {
             grid-template-columns: repeat(1, 1fr);
             grid-template-rows: repeat(9, 1fr);
             margin: 0 $mobile-margin;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: $padding-mobile;
+            margin-bottom: $padding-mobile;
             img {
                 width: 100%;
             }
@@ -130,8 +130,8 @@ main {
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(3, 1fr);
                 margin: 0 $tablet-margin;
-                gap: 24px;
-                margin-bottom: 36px;
+                gap: $tablet-gutter;
+                margin-bottom: $padding-tablet;
             }
 
             @include desktop {

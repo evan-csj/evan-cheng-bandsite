@@ -115,12 +115,12 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 16px;
+        padding-top: $padding-mobile;
 
         @include tablet {
-            margin-left: 36px;
+            margin-left: $tablet-margin;
             flex-direction: row;
-            column-gap: 24px;
+            column-gap: $tablet-gutter;
             padding: 0;
         }
         @include desktop {
@@ -150,7 +150,7 @@ header {
             ul {
                 display: flex;
                 @include tablet {
-                    column-gap: 24px;
+                    column-gap: $tablet-gutter;
                 }
 
                 li {
@@ -216,13 +216,13 @@ footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        row-gap: 16px;
+        row-gap: $padding-mobile;
 
         @include tablet {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(1, 1fr);
             align-items: center;
-            column-gap: 24px;
+            column-gap: $tablet-gutter;
         }
 
         @include desktop {
@@ -238,7 +238,7 @@ footer {
         div {
             display: flex;
             justify-content: flex-start;
-            column-gap: 36px;
+            column-gap: 32px;
             flex-wrap: nowrap;
         }
 
@@ -255,19 +255,19 @@ footer {
     }
 
     .booking {
-        padding-left: 16px;
-        padding-right: 16px;
+        padding-left: $mobile-margin;
+        padding-right: $mobile-margin;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        row-gap: 16px;
+        row-gap: $padding-mobile;
 
         @include tablet {
-            padding-left: 36px;
-            padding-right: 36px;
+            padding-left: $tablet-margin;
+            padding-right: $tablet-margin;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(1, 1fr);
-            column-gap: 24px;
+            column-gap: $tablet-gutter;
         }
 
         @include desktop {
@@ -280,17 +280,17 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            row-gap: 16px;
+            row-gap: $padding-mobile;
             @include tablet {
-                row-gap: 36px;
+                row-gap: $padding-tablet;
             }
         }
     }
 
     .copy-right {
-        padding: 48px 16px 24px 16px;
+        padding: 48px $padding-mobile 24px $padding-mobile;
         img {
-            padding-bottom: 16px;
+            padding-bottom: $padding-mobile;
         }
         @include tablet {
             @include width-grid(12);

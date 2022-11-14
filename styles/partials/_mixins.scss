@@ -33,15 +33,15 @@
 
 @mixin padding-headline {
     padding-top: 24px;
-    padding-right: 16px;
+    padding-right: $mobile-margin;
     padding-bottom: 16px;
-    padding-left: 16px;
+    padding-left: $mobile-margin;
 
     @include tablet {
         padding-top: 48px;
-        padding-right: 36px;
+        padding-right: $tablet-margin;
         padding-bottom: 36px;
-        padding-left: 36px;
+        padding-left: $tablet-margin;
     }
 
     @include desktop {
@@ -53,20 +53,20 @@
 @mixin padding-component($top: false, $bottom: false) {
     padding: 0;
     @if $top {
-        padding-top: 16px;
+        padding-top: $padding-mobile;
     }
 
     @if $bottom {
-        padding-bottom: 16px;
+        padding-bottom: $padding-mobile;
     }
     
     @include tablet {
         @if $top {
-            padding-top: 36px;
+            padding-top: $padding-tablet;
         }
     
         @if $bottom {
-            padding-bottom: 36px;
+            padding-bottom: $padding-tablet;
         }
     }
 }
