@@ -129,7 +129,7 @@ header {
             margin: 0 auto;
         }
 
-        div.logo {
+        a.logo {
             display: flex;
             @include tablet {
                 width: 156px;
