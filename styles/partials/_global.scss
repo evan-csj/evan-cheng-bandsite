@@ -4,6 +4,7 @@
 * {
     margin: 0;
     font-family: "Avenir Next Regular";
+    box-sizing: border-box;
 }
 
 %page-header, %section-header {
@@ -115,7 +116,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: $padding-mobile;
+        padding-top: $mobile-padding;
 
         @include tablet {
             margin-left: $tablet-margin;
@@ -196,8 +197,12 @@ header {
 
 footer {
     background-color: $bs-black;
-    display: flex;
-    flex-direction: column;
+    
+    &>div{
+        display: flex;
+        flex-direction: column;
+        @include margin-edge();
+    }
 
     * {
         color: $bs-white;
@@ -216,7 +221,7 @@ footer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        row-gap: $padding-mobile;
+        row-gap: $mobile-padding;
 
         @include tablet {
             grid-template-columns: repeat(3, 1fr);
@@ -232,7 +237,7 @@ footer {
 
         h2 {
             padding: 0;
-            white-space: nowrap;
+            margin: 0;
         }
 
         div {
@@ -242,7 +247,7 @@ footer {
             flex-wrap: nowrap;
         }
 
-        &>img {
+        .logo {
             display: none;
             @include tablet {
                 display: inline-block;
@@ -255,16 +260,12 @@ footer {
     }
 
     .booking {
-        padding-left: $mobile-margin;
-        padding-right: $mobile-margin;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        row-gap: $padding-mobile;
+        row-gap: $mobile-padding;
 
         @include tablet {
-            padding-left: $tablet-margin;
-            padding-right: $tablet-margin;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(1, 1fr);
             column-gap: $tablet-gutter;
@@ -280,22 +281,25 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            row-gap: $padding-mobile;
+            row-gap: $mobile-padding;
             @include tablet {
-                row-gap: $padding-tablet;
+                row-gap: $tablet-padding;
             }
         }
     }
 
     .copy-right {
-        padding: 48px $padding-mobile 24px $padding-mobile;
-        img {
-            padding-bottom: $padding-mobile;
-        }
+        padding-top: 48px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        row-gap: $mobile-padding;
+        
         @include tablet {
             @include width-grid(12);
+            padding-bottom: 40px;
             margin: 0 auto;
-            img {
+            .logo {
                 display: none;
             }
         }

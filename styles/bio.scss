@@ -21,7 +21,6 @@ main {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-
         height: 60vw;
 
         display: flex;
@@ -43,6 +42,7 @@ main {
         }
 
         h1 {
+            @include margin-headline();
             color: $bs-white;
             z-index: 1;
             @include desktop {
@@ -55,16 +55,27 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include margin-edge();
         
         %about-content {
-            box-sizing: border-box;
             @include width-grid(10);
-            padding-left: $mobile-margin;
-            padding-right: $mobile-margin;
+            margin: 0 auto;
+        }
+
+        h3, img {
+            @extend %about-content;
+        }
+
+        img {
+            height: 50vw;
+            object-fit: cover;
+            object-position: bottom;
             @include tablet {
-                padding-left: 0;
-                padding-right: 0;
-                margin: 0 auto;
+                height: 43vw;
+                object-position: center
+            }
+            @include desktop {
+                height: 460px;
             }
         }
 
@@ -95,17 +106,12 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            row-gap: $padding-mobile;
+            row-gap: $mobile-padding;
 
             @include tablet {
                 flex-direction: row;
-                column-gap: $padding-tablet;
+                column-gap: $tablet-padding;
             }
-        }
-
-        h3, img {
-            display: block;
-            @extend %about-content;
         }
     }
 
@@ -114,14 +120,17 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        h2{
+            @include margin-headline();
+        }
 
         .container {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             grid-template-rows: repeat(9, 1fr);
             margin: 0 $mobile-margin;
-            gap: $padding-mobile;
-            margin-bottom: $padding-mobile;
+            gap: $mobile-padding;
+            margin-bottom: $mobile-padding;
             img {
                 width: 100%;
             }
@@ -131,7 +140,7 @@ main {
                 grid-template-rows: repeat(3, 1fr);
                 margin: 0 $tablet-margin;
                 gap: $tablet-gutter;
-                margin-bottom: $padding-tablet;
+                margin-bottom: $tablet-padding;
             }
 
             @include desktop {

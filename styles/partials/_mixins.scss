@@ -33,40 +33,48 @@
 
 @mixin padding-headline {
     padding-top: 24px;
-    padding-right: $mobile-margin;
     padding-bottom: 16px;
-    padding-left: $mobile-margin;
 
     @include tablet {
         padding-top: 48px;
-        padding-right: $tablet-margin;
         padding-bottom: 36px;
-        padding-left: $tablet-margin;
     }
+}
 
+@mixin margin-headline {
+    margin-left: 16px;
+    @include tablet {
+        margin-left: 36px;
+    }
     @include desktop {
-        padding-left: 0;
-        padding-right: 0;
+        margin: 0 auto;
+    }
+}
+
+@mixin margin-edge {
+    margin: 0 $mobile-margin;
+    @include tablet {
+        margin: 0 $tablet-margin;
     }
 }
 
 @mixin padding-component($top: false, $bottom: false) {
     padding: 0;
     @if $top {
-        padding-top: $padding-mobile;
+        padding-top: $mobile-padding;
     }
 
     @if $bottom {
-        padding-bottom: $padding-mobile;
+        padding-bottom: $mobile-padding;
     }
     
     @include tablet {
         @if $top {
-            padding-top: $padding-tablet;
+            padding-top: $tablet-padding;
         }
     
         @if $bottom {
-            padding-bottom: $padding-tablet;
+            padding-bottom: $tablet-padding;
         }
     }
 }

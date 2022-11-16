@@ -15,9 +15,9 @@ $tablet-gutter: 24px;
 $mobile-margin: 16px;
 $mobile-gutter: 16px;
 
-$padding-mobile: 16px;
-$padding-tablet: 36px;
-$padding-desktop: 36px;
+$mobile-padding: 16px;
+$tablet-padding: 36px;
+$desktop-padding: 36px;
 
 $width-gallery-img: calc($desktop-column * 4 + $desktop-gutter * 3);
 $width-footer: calc($desktop-column * 3 + $desktop-gutter * 2);
