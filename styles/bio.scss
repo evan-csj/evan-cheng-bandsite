@@ -131,8 +131,14 @@ main {
             margin: 0 $mobile-margin;
             gap: $mobile-padding;
             margin-bottom: $mobile-padding;
+
             img {
                 width: 100%;
+                filter: grayscale(80%);
+                transition: filter 0.5s;
+                &:hover {
+                    filter: grayscale(0%);
+                }
             }
 
             @include tablet {

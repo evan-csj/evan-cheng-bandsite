@@ -628,6 +628,11 @@ main .gallery .container {
 }
 main .gallery .container img {
   width: 100%;
+  filter: grayscale(80%);
+  transition: filter 0.5s;
+}
+main .gallery .container img:hover {
+  filter: grayscale(0%);
 }
 @media only screen and (min-width: 768px) {
   main .gallery .container {
