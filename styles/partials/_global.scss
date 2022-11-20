@@ -7,10 +7,15 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 %page-header, %section-header {
     font-size: 24px;
     line-height: 32px;
     font-family: "Avenir Next Bold";
+    white-space: nowrap;
 }
 
 %page-header {
@@ -236,7 +241,7 @@ footer {
 
         &>* {
             @include tablet {
-                flex: 1 0 0;
+                @include width-grid(4);
             }
             @include desktop {
                 @include width-grid(3);
@@ -291,7 +296,9 @@ footer {
             }
 
             &:last-child {
-                @include width-grid(6);
+                @include desktop {
+                    @include width-grid(6);
+                }
             }
         }
     }
