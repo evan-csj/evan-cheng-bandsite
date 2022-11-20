@@ -13,14 +13,12 @@ $tablet-column: calc((100vw - 72px - 24px * 11) / 12);
 $tablet-gutter: 24px;
 
 $mobile-margin: 16px;
+$mobile-column: calc((100vw - 16px * 7) / 6);
 $mobile-gutter: 16px;
 
 $mobile-padding: 16px;
 $tablet-padding: 36px;
 $desktop-padding: 36px;
-
-$width-gallery-img: calc($desktop-column * 4 + $desktop-gutter * 3);
-$width-footer: calc($desktop-column * 3 + $desktop-gutter * 2);
 
 @font-face {
     font-family: "Avenir Next Regular";

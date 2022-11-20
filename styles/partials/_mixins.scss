@@ -23,14 +23,6 @@
     }
 }
 
-@mixin width-tablet($n) {
-    width: calc($tablet-column * $n + $tablet-gutter * ($n - 1));
-}
-
-@mixin width-desktop($n) {
-    width: calc($desktop-column * $n + $desktop-gutter * ($n - 1));
-}
-
 @mixin padding-headline {
     padding-top: 24px;
     padding-bottom: 16px;
@@ -42,9 +34,9 @@
 }
 
 @mixin margin-headline {
-    margin-left: 16px;
+    margin-left: $mobile-margin;
     @include tablet {
-        margin-left: 36px;
+        margin-left: $tablet-margin;
     }
     @include desktop {
         margin: 0 auto;
@@ -55,6 +47,9 @@
     margin: 0 $mobile-margin;
     @include tablet {
         margin: 0 $tablet-margin;
+    }
+    @include desktop {
+        margin: 0 auto;
     }
 }
 

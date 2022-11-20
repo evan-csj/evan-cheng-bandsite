@@ -313,19 +313,73 @@ footer > div {
     margin: 0 36px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  footer > div {
+    margin: 0 auto;
+  }
+}
 footer * {
   color: #FFFFFF;
 }
 footer h4 {
   font-family: "Avenir Next Demi";
 }
+footer .booking, footer .touch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking, footer .touch {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking, footer .touch {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    margin: 0 16px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking, footer .touch {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking, footer .touch {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    flex: 1 0 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 100%;
+    flex: none;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 237px;
+  }
+}
 footer .touch {
   padding-top: 24px;
   padding-bottom: 16px;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  row-gap: 16px;
 }
 @media only screen and (min-width: 768px) {
   footer .touch {
@@ -333,65 +387,42 @@ footer .touch {
     padding-bottom: 36px;
   }
 }
-@media only screen and (min-width: 768px) {
-  footer .touch {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    align-items: center;
-    -moz-column-gap: 24px;
-         column-gap: 24px;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  footer .touch {
-    grid-template-columns: repeat(4, 237px);
-    margin: 0 auto;
-  }
-}
 footer .touch h2 {
   padding: 0;
   margin: 0;
 }
-footer .touch div {
+footer .touch .icons {
   display: flex;
   justify-content: flex-start;
   -moz-column-gap: 32px;
        column-gap: 32px;
   flex-wrap: nowrap;
 }
-footer .touch .logo {
+footer .touch div.logo {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  footer .touch .logo {
-    display: inline-block;
-    justify-self: end;
+  footer .touch div.logo {
+    display: block;
+  }
+  footer .touch div.logo img.logo {
+    display: inherit;
+    margin-left: auto;
   }
 }
 @media only screen and (min-width: 1280px) {
-  footer .touch .logo {
-    grid-column: 4/5;
+  footer .touch div.logo {
+    width: 100%;
   }
 }
-footer .booking {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  row-gap: 16px;
-}
-@media only screen and (min-width: 768px) {
-  footer .booking {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    -moz-column-gap: 24px;
-         column-gap: 24px;
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .touch div.logo {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
   }
 }
-@media only screen and (min-width: 1280px) {
-  footer .booking {
-    padding: 0;
-    grid-template-columns: repeat(4, 237px);
-    margin: 0 auto;
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .touch div.logo {
+    width: 498px;
   }
 }
 footer .booking__contact {
@@ -402,7 +433,20 @@ footer .booking__contact {
 }
 @media only screen and (min-width: 768px) {
   footer .booking__contact {
-    row-gap: 36px;
+    row-gap: 24px;
+  }
+}
+footer .booking__contact:last-child {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking__contact:last-child {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking__contact:last-child {
+    width: 498px;
   }
 }
 footer .copy-right {
@@ -523,6 +567,11 @@ main .about {
     margin: 0 36px;
   }
 }
+@media only screen and (min-width: 1280px) {
+  main .about {
+    margin: 0 auto;
+  }
+}
 main .about .about__description, main .about .about__quote, main .about h3, main .about img {
   width: 100%;
   margin: 0 auto;
@@ -619,33 +668,63 @@ main .gallery h2 {
   }
 }
 main .gallery .container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(9, 1fr);
   margin: 0 16px;
-  gap: 16px;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .gallery .container {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .gallery .container {
+    margin: 0 auto;
+  }
 }
 main .gallery .container img {
   width: 100%;
   filter: grayscale(80%);
   transition: filter 0.5s;
 }
+@media only screen and (min-width: 768px) {
+  main .gallery .container img {
+    width: calc((100vw - 72px - 264px) / 12 * 4 + 72px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .gallery .container img {
+    width: 324px;
+  }
+}
 main .gallery .container img:hover {
   filter: grayscale(0%);
 }
 @media only screen and (min-width: 768px) {
   main .gallery .container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    margin: 0 36px;
-    gap: 24px;
     margin-bottom: 36px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
   }
 }
 @media only screen and (min-width: 1280px) {
   main .gallery .container {
-    grid-template-columns: repeat(3, 324px);
-    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 36px;
+    gap: 24px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  main .gallery .container {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  main .gallery .container {
+    width: 1020px;
   }
 }/*# sourceMappingURL=bio.css.map */

@@ -216,66 +216,70 @@ footer {
         @extend %footer-copy;
     }
 
-    .touch {
-        @include padding-headline();
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+    %footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         row-gap: $mobile-padding;
 
         @include tablet {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(1, 1fr);
-            align-items: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
             column-gap: $tablet-gutter;
+            align-items: center;
         }
 
         @include desktop {
-            grid-template-columns: repeat(4, $width-footer);
-            margin: 0 auto;
+            column-gap: $desktop-gutter;
+            @include margin-edge();
         }
+
+        &>* {
+            @include tablet {
+                flex: 1 0 0;
+            }
+            @include desktop {
+                @include width-grid(3);
+                flex: none;
+            }
+        }
+    }
+
+    .touch {
+        @extend %footer-content;
+        @include padding-headline();
 
         h2 {
             padding: 0;
             margin: 0;
         }
 
-        div {
+        .icons {
             display: flex;
             justify-content: flex-start;
             column-gap: 32px;
             flex-wrap: nowrap;
         }
 
-        .logo {
+        div.logo {
             display: none;
+
             @include tablet {
-                display: inline-block;
-                justify-self: end;
+                display: block;
+                img.logo {
+                    display: inherit;
+                    margin-left: auto;
+                }
             }
+
             @include desktop {
-                grid-column: 4 / 5;
+                @include width-grid(6);
             }
         }
     }
 
     .booking {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        row-gap: $mobile-padding;
-
-        @include tablet {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(1, 1fr);
-            column-gap: $tablet-gutter;
-        }
-
-        @include desktop {
-            padding: 0;
-            grid-template-columns: repeat(4, $width-footer);
-            margin: 0 auto;
-        }
+        @extend %footer-content;
 
         &__contact {
             display: flex;
@@ -283,7 +287,11 @@ footer {
             justify-content: space-between;
             row-gap: $mobile-padding;
             @include tablet {
-                row-gap: $tablet-padding;
+                row-gap: $tablet-gutter;
+            }
+
+            &:last-child {
+                @include width-grid(6);
             }
         }
     }

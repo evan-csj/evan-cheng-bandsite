@@ -120,20 +120,21 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
         h2{
             @include margin-headline();
         }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(9, 1fr);
-            margin: 0 $mobile-margin;
-            gap: $mobile-padding;
+            @include margin-edge();
             margin-bottom: $mobile-padding;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: $mobile-padding;
 
             img {
-                width: 100%;
+                @include width-grid(4);
                 filter: grayscale(80%);
                 transition: filter 0.5s;
                 &:hover {
@@ -142,16 +143,16 @@ main {
             }
 
             @include tablet {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-                margin: 0 $tablet-margin;
-                gap: $tablet-gutter;
                 margin-bottom: $tablet-padding;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: $tablet-gutter;
             }
 
             @include desktop {
-                grid-template-columns: repeat(3, $width-gallery-img);
-                grid-template-rows: repeat(3, 1fr);
+                margin-bottom: $desktop-padding;
+                gap: $desktop-gutter;
+                @include width-grid(12);
             }
         }
     }
