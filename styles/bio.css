@@ -52,10 +52,15 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 h1, h2 {
   font-size: 24px;
   line-height: 32px;
   font-family: "Avenir Next Bold";
+  white-space: nowrap;
 }
 
 @media only screen and (min-width: 768px) {
@@ -358,7 +363,17 @@ footer .booking, footer .touch {
 }
 @media only screen and (min-width: 768px) {
   footer .booking > *, footer .touch > * {
-    flex: 1 0 0;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: calc((100vw - 72px - 264px) / 12 * 4 + 72px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 324px;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -436,15 +451,17 @@ footer .booking__contact {
     row-gap: 24px;
   }
 }
-footer .booking__contact:last-child {
-  width: 100%;
+@media only screen and (min-width: 1280px) {
+  footer .booking__contact:last-child {
+    width: 100%;
+  }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
   footer .booking__contact:last-child {
     width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
   }
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
   footer .booking__contact:last-child {
     width: 498px;
   }
@@ -705,10 +722,22 @@ main .gallery .container img:hover {
 }
 @media only screen and (min-width: 768px) {
   main .gallery .container {
+    width: 100%;
+    margin: 0 auto;
     margin-bottom: 36px;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  main .gallery .container {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  main .gallery .container {
+    width: 1020px;
   }
 }
 @media only screen and (min-width: 1280px) {
