@@ -1,0 +1,322 @@
+@import "./variables";
+@import "./mixins";
+
+* {
+    margin: 0;
+    font-family: "Avenir Next Regular";
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+%page-header, %section-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "Avenir Next Bold";
+    white-space: nowrap;
+}
+
+%page-header {
+    @include tablet {
+        font-size: 60px;
+        line-height: 68px;
+    }
+}
+
+%section-header {
+    @include tablet {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+%subheader {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Avenir Next Demi";
+    @include tablet {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+%body-copy, %footer-copy {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+%body-copy {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+%footer-copy {
+    @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+h1 {
+    @extend %page-header;
+    @include padding-headline();
+}
+
+h2 {
+    @extend %section-header;
+    @include padding-headline();
+}
+
+h3 {
+    @extend %subheader;
+    @include padding-headline();
+}
+
+p {
+    @extend %body-copy;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.icon {
+    height: 24px;
+}
+
+img.logo {
+    width: 120px;
+    height: 20px;
+}
+
+.label, .btn {
+    color: $bs-mercury;
+    font-size: 10px;
+    line-height: 20px;
+    @include tablet {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+header {
+    background-color: $bs-black;
+    * {
+        color: $bs-white;
+    }
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: $mobile-padding;
+
+        @include tablet {
+            margin-left: $tablet-margin;
+            flex-direction: row;
+            column-gap: $tablet-gutter;
+            padding: 0;
+        }
+        @include desktop {
+            @include width-grid(12);
+            margin: 0 auto;
+        }
+
+        a.logo {
+            display: flex;
+            @include tablet {
+                width: 156px;
+            }
+            @include desktop {
+                @include width-grid(2);
+            }
+        }
+
+        nav{
+            width: 100%;
+            @include tablet {
+                width: 216px;
+            }
+            @include desktop {
+                @include width-grid(2)
+            }
+
+            ul {
+                display: flex;
+                @include tablet {
+                    column-gap: $tablet-gutter;
+                }
+
+                li {
+                    display: flex;
+                    width: 50%;
+                    text-align: center;
+                    @include tablet {
+                        width: 96px;
+                    }
+                    @include desktop {
+                        justify-content: center;
+                    }
+
+                    .label {
+                        color: $bs-mercury;
+                        display: flex;
+                        width: 100%;
+                        padding: 8px 0;
+                        justify-content: center;
+                        border-top: rgba($bs-black, 0) solid 5px;
+
+                        @include tablet {
+                            width: auto;
+                            padding: 18px 0;
+                        }
+
+                        &:hover {
+                            color: $bs-white;
+                            border-bottom: $bs-white solid 5px;
+                        }
+                    }
+
+                    .active {
+                        font-family: "Avenir Next Bold";
+                        color: $bs-white;
+                        border-bottom: $bs-white solid 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $bs-black;
+    
+    &>div{
+        display: flex;
+        flex-direction: column;
+        @include margin-edge();
+    }
+
+    * {
+        color: $bs-white;
+    }
+
+    h4 {
+        font-family: "Avenir Next Demi";
+    }
+
+    h4, p, a {
+        @extend %footer-copy;
+    }
+
+    %footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: $mobile-padding;
+
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            column-gap: $tablet-gutter;
+            align-items: center;
+        }
+
+        @include desktop {
+            column-gap: $desktop-gutter;
+            @include margin-edge();
+        }
+
+        &>* {
+            @include tablet {
+                @include width-grid(4);
+            }
+            @include desktop {
+                @include width-grid(3);
+                flex: none;
+            }
+        }
+    }
+
+    .touch {
+        @extend %footer-content;
+        @include padding-headline();
+
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: flex-start;
+            column-gap: 32px;
+            flex-wrap: nowrap;
+        }
+
+        div.logo {
+            display: none;
+
+            @include tablet {
+                display: block;
+                img.logo {
+                    display: inherit;
+                    margin-left: auto;
+                }
+            }
+
+            @include desktop {
+                @include width-grid(6);
+            }
+        }
+    }
+
+    .booking {
+        @extend %footer-content;
+
+        &__contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: $mobile-padding;
+            @include tablet {
+                row-gap: $tablet-gutter;
+            }
+
+            &:last-child {
+                @include desktop {
+                    @include width-grid(6);
+                }
+            }
+        }
+    }
+
+    .copy-right {
+        padding-top: 48px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        row-gap: $mobile-padding;
+        
+        @include tablet {
+            @include width-grid(12);
+            padding-bottom: 40px;
+            margin: 0 auto;
+            .logo {
+                display: none;
+            }
+        }
+    }
+}

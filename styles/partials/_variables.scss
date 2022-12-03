@@ -1,0 +1,39 @@
+$bs-black: #323232;
+$bs-silver: #AFAFAF;
+$bs-white: #FFFFFF;
+$bs-darkblack: #000000;
+$bs-mercury: #E1E1E1;
+$bs-alabaster: #FAFAFA;
+
+$desktop-column: 63px;
+$desktop-gutter: 24px;
+
+$tablet-margin: 36px;
+$tablet-column: calc((100vw - 72px - 24px * 11) / 12);
+$tablet-gutter: 24px;
+
+$mobile-margin: 16px;
+$mobile-column: calc((100vw - 16px * 7) / 6);
+$mobile-gutter: 16px;
+
+$mobile-padding: 16px;
+$tablet-padding: 36px;
+$desktop-padding: 36px;
+
+@font-face {
+    font-family: "Avenir Next Regular";
+    src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"),
+         url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Avenir Next Demi";
+    src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"),
+         url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Avenir Next Bold";
+    src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"),
+         url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}

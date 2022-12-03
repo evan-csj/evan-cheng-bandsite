@@ -1,0 +1,75 @@
+@import "./variables";
+
+@mixin tablet {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin width-grid($n) {
+    width: 100%;
+    @include tablet {
+        width: calc($tablet-column * $n + $tablet-gutter * ($n - 1));
+    }
+    @include desktop {
+        width: calc($desktop-column * $n + $desktop-gutter * ($n - 1));
+        
+    }
+}
+
+@mixin padding-headline {
+    padding-top: 24px;
+    padding-bottom: 16px;
+
+    @include tablet {
+        padding-top: 48px;
+        padding-bottom: 36px;
+    }
+}
+
+@mixin margin-headline {
+    margin-left: $mobile-margin;
+    @include tablet {
+        margin-left: $tablet-margin;
+    }
+    @include desktop {
+        margin: 0 auto;
+    }
+}
+
+@mixin margin-edge {
+    margin: 0 $mobile-margin;
+    @include tablet {
+        margin: 0 $tablet-margin;
+    }
+    @include desktop {
+        margin: 0 auto;
+    }
+}
+
+@mixin padding-component($top: false, $bottom: false) {
+    padding: 0;
+    @if $top {
+        padding-top: $mobile-padding;
+    }
+
+    @if $bottom {
+        padding-bottom: $mobile-padding;
+    }
+    
+    @include tablet {
+        @if $top {
+            padding-top: $tablet-padding;
+        }
+    
+        @if $bottom {
+            padding-bottom: $tablet-padding;
+        }
+    }
+}

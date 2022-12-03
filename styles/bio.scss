@@ -1,0 +1,161 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/global";
+
+main {
+    * {
+        color: $bs-black;
+    }
+
+    h2 {
+        align-self: flex-start;
+        @include desktop {
+            @include width-grid(12);
+            margin: 0 auto;
+        }
+    }
+
+    .hero {
+        position: relative;
+        background-image: url(../../assets/images/hero-bio.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 60vw;
+
+        display: flex;
+        align-items: center;
+
+        @include desktop {
+            justify-content: center;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            background-color: rgba($bs-black, 0.5);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            @include margin-headline();
+            color: $bs-white;
+            z-index: 1;
+            @include desktop {
+                @include width-grid(12);
+            }
+        }
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include margin-edge();
+        
+        %about-content {
+            @include width-grid(10);
+            margin: 0 auto;
+        }
+
+        h3, img {
+            @extend %about-content;
+        }
+
+        img {
+            height: 50vw;
+            object-fit: cover;
+            object-position: bottom;
+            @include tablet {
+                height: 43vw;
+                object-position: center
+            }
+            @include desktop {
+                height: 460px;
+            }
+        }
+
+        &__quote {
+            @extend %about-content;
+            @include padding-component($top: true, $bottom: false);
+            
+            &-content {
+                @extend %subheader;
+                @include desktop {
+                    width: 80%;
+                }
+            }
+            
+            &-name {
+                @extend %subheader;
+                padding: 12px 0 0 0;
+                @include tablet {
+                    font-size: 20px;
+                    padding: 18px 0 0 0;
+                }
+            }
+        }
+
+        &__description {
+            @include padding-component($top: false, $bottom: true);
+            @extend %about-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: $mobile-padding;
+
+            @include tablet {
+                flex-direction: row;
+                column-gap: $tablet-padding;
+            }
+        }
+    }
+
+    .gallery {
+        background-color: $bs-alabaster;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        h2{
+            @include margin-headline();
+        }
+
+        .container {
+            @include margin-edge();
+            margin-bottom: $mobile-padding;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: $mobile-padding;
+
+            img {
+                @include width-grid(4);
+                filter: grayscale(80%);
+                transition: filter 0.5s;
+                &:hover {
+                    filter: grayscale(0%);
+                }
+            }
+
+            @include tablet {
+                @include width-grid(12);
+                margin: 0 auto;
+                margin-bottom: $tablet-padding;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: $tablet-gutter;
+            }
+
+            @include desktop {
+                margin-bottom: $desktop-padding;
+                gap: $desktop-gutter;
+                @include width-grid(12);
+            }
+        }
+    }
+}

@@ -1,0 +1,759 @@
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+* {
+  margin: 0;
+  font-family: "Avenir Next Regular";
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1, h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "Avenir Next Bold";
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+main .about__quote-name, main .about__quote-content, h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "Avenir Next Demi";
+}
+@media only screen and (min-width: 768px) {
+  main .about__quote-name, main .about__quote-content, h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+p, footer h4, footer p, footer a {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer h4, footer p, footer a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+h1 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+
+h2 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+
+h3 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  height: 24px;
+}
+
+img.logo {
+  width: 120px;
+  height: 20px;
+}
+
+.label, .btn {
+  color: #E1E1E1;
+  font-size: 10px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .label, .btn {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+header {
+  background-color: #323232;
+}
+header * {
+  color: #FFFFFF;
+}
+header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+}
+@media only screen and (min-width: 768px) {
+  header > div {
+    margin-left: 36px;
+    flex-direction: row;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  header > div {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  header > div {
+    width: 1020px;
+  }
+}
+header > div a.logo {
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  header > div a.logo {
+    width: 156px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div a.logo {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  header > div a.logo {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  header > div a.logo {
+    width: 150px;
+  }
+}
+header > div nav {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav {
+    width: 216px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div nav {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  header > div nav {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  header > div nav {
+    width: 150px;
+  }
+}
+header > div nav ul {
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav ul {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+}
+header > div nav ul li {
+  display: flex;
+  width: 50%;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav ul li {
+    width: 96px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div nav ul li {
+    justify-content: center;
+  }
+}
+header > div nav ul li .label {
+  color: #E1E1E1;
+  display: flex;
+  width: 100%;
+  padding: 8px 0;
+  justify-content: center;
+  border-top: rgba(50, 50, 50, 0) solid 5px;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav ul li .label {
+    width: auto;
+    padding: 18px 0;
+  }
+}
+header > div nav ul li .label:hover {
+  color: #FFFFFF;
+  border-bottom: #FFFFFF solid 5px;
+}
+header > div nav ul li .active {
+  font-family: "Avenir Next Bold";
+  color: #FFFFFF;
+  border-bottom: #FFFFFF solid 5px;
+}
+
+footer {
+  background-color: #323232;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer > div {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer > div {
+    margin: 0 auto;
+  }
+}
+footer * {
+  color: #FFFFFF;
+}
+footer h4 {
+  font-family: "Avenir Next Demi";
+}
+footer .booking, footer .touch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking, footer .touch {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking, footer .touch {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    margin: 0 16px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking, footer .touch {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking, footer .touch {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: calc((100vw - 72px - 264px) / 12 * 4 + 72px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 324px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 100%;
+    flex: none;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 237px;
+  }
+}
+footer .touch {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .touch {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+footer .touch h2 {
+  padding: 0;
+  margin: 0;
+}
+footer .touch .icons {
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  flex-wrap: nowrap;
+}
+footer .touch div.logo {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  footer .touch div.logo {
+    display: block;
+  }
+  footer .touch div.logo img.logo {
+    display: inherit;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .touch div.logo {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .touch div.logo {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .touch div.logo {
+    width: 498px;
+  }
+}
+footer .booking__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking__contact {
+    row-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking__contact:last-child {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking__contact:last-child {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking__contact:last-child {
+    width: 498px;
+  }
+}
+footer .copy-right {
+  padding-top: 48px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .copy-right {
+    width: 100%;
+    padding-bottom: 40px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  footer .copy-right {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  footer .copy-right {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .copy-right .logo {
+    display: none;
+  }
+}
+
+main * {
+  color: #323232;
+}
+main h2 {
+  align-self: flex-start;
+}
+@media only screen and (min-width: 1280px) {
+  main h2 {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  main h2 {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  main h2 {
+    width: 1020px;
+  }
+}
+main .hero {
+  position: relative;
+  background-image: url(../../assets/images/hero-bio.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 60vw;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (min-width: 1280px) {
+  main .hero {
+    justify-content: center;
+  }
+}
+main .hero::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: rgba(50, 50, 50, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main .hero h1 {
+  margin-left: 16px;
+  color: #FFFFFF;
+  z-index: 1;
+}
+@media only screen and (min-width: 768px) {
+  main .hero h1 {
+    margin-left: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .hero h1 {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .hero h1 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  main .hero h1 {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  main .hero h1 {
+    width: 1020px;
+  }
+}
+main .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .about {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .about {
+    margin: 0 auto;
+  }
+}
+main .about .about__description, main .about .about__quote, main .about h3, main .about img {
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  main .about .about__description, main .about .about__quote, main .about h3, main .about img {
+    width: calc((100vw - 72px - 264px) / 12 * 10 + 216px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .about .about__description, main .about .about__quote, main .about h3, main .about img {
+    width: 846px;
+  }
+}
+main .about img {
+  height: 50vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+@media only screen and (min-width: 768px) {
+  main .about img {
+    height: 43vw;
+    -o-object-position: center;
+       object-position: center;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .about img {
+    height: 460px;
+  }
+}
+main .about__quote {
+  padding: 0;
+  padding-top: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .about__quote {
+    padding-top: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .about__quote-content {
+    width: 80%;
+  }
+}
+main .about__quote-name {
+  padding: 12px 0 0 0;
+}
+@media only screen and (min-width: 768px) {
+  main .about__quote-name {
+    font-size: 20px;
+    padding: 18px 0 0 0;
+  }
+}
+main .about__description {
+  padding: 0;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .about__description {
+    padding-bottom: 36px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .about__description {
+    flex-direction: row;
+    -moz-column-gap: 36px;
+         column-gap: 36px;
+  }
+}
+main .gallery {
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .gallery h2 {
+  margin-left: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .gallery h2 {
+    margin-left: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .gallery h2 {
+    margin: 0 auto;
+  }
+}
+main .gallery .container {
+  margin: 0 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  main .gallery .container {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .gallery .container {
+    margin: 0 auto;
+  }
+}
+main .gallery .container img {
+  width: 100%;
+  filter: grayscale(80%);
+  transition: filter 0.5s;
+}
+@media only screen and (min-width: 768px) {
+  main .gallery .container img {
+    width: calc((100vw - 72px - 264px) / 12 * 4 + 72px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .gallery .container img {
+    width: 324px;
+  }
+}
+main .gallery .container img:hover {
+  filter: grayscale(0%);
+}
+@media only screen and (min-width: 768px) {
+  main .gallery .container {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 36px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  main .gallery .container {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  main .gallery .container {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  main .gallery .container {
+    margin-bottom: 36px;
+    gap: 24px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  main .gallery .container {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  main .gallery .container {
+    width: 1020px;
+  }
+}/*# sourceMappingURL=bio.css.map */
