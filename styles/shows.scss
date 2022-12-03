@@ -1,0 +1,42 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/global";
+
+div.hero {
+    position: relative;
+    background-image: url(../assets/images/hero-shows.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: rgba($bs-black, 0.5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+section.hero {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    @include margin-edge();
+    row-gap: $mobile-padding;
+
+    * {
+        z-index: 1;
+        padding: 0;
+        color: $bs-white;
+    }
+
+    iframe {
+        width: 200%;
+        height: 120px;
+        transform: scale(0.5) translate(-50%);
+    }
+}
