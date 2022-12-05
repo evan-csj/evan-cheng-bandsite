@@ -32,11 +32,84 @@ section.hero {
         z-index: 1;
         padding: 0;
         color: $bs-white;
+        white-space: normal;
     }
 
     iframe {
-        width: 200%;
+        $sound-cloud: 1.2;
+        width: $sound-cloud*100%;
         height: 120px;
-        transform: scale(0.5) translate(-50%);
+        transform: scale(calc(1 / $sound-cloud)) translate(calc((1 - $sound-cloud) / 2 * 100%));
+    }
+}
+
+section.shows {
+    h2 {
+        @include margin-headline();
+    }
+}
+
+div.events {
+    display: flex;
+    flex-direction: column;
+    row-gap: $mobile-padding;
+    padding-bottom: $mobile-padding;
+
+    @include tablet {
+        margin: 0 $mobile-margin;
+        row-gap: 0;
+        padding-bottom: $tablet-padding;
+    }
+
+    .event {
+        border-bottom: 1px solid $bs-mercury;
+        padding: 0 $mobile-margin $mobile-padding;
+        display: flex;
+        flex-direction: column;
+        row-gap: $mobile-padding;
+
+        &__date, &__tag {
+            font-family: "Avenir Next Demi";
+        }
+
+        &__tag {
+            @extend %label-btn;
+            text-transform: uppercase;
+            color: $bs-silver;
+        }
+
+        &__btn {
+            @extend .btn;
+            color: $bs-white;
+            background-color: $bs-black;
+            border: 0;
+            width: 100%;
+        }
+
+        &:first-child {
+            display: none;
+        }
+
+        @include tablet {
+            flex-direction: row;
+            padding: calc($tablet-padding / 2) calc($tablet-padding - $mobile-padding);
+            justify-content: space-between;
+            align-items: center;
+
+            &>* {
+                @include width-grid(3);
+            }
+
+            &__tag--mobile {
+                display: none;
+            }
+
+            &:first-child {
+                display: flex;
+                border: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
     }
 }

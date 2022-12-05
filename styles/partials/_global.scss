@@ -61,6 +61,16 @@
     }
 }
 
+%label-btn {
+    color: $bs-mercury;
+    font-size: 10px;
+    line-height: 20px;
+    @include tablet {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
 h1 {
     @extend %page-header;
     @include padding-headline();
@@ -102,13 +112,15 @@ img.logo {
 }
 
 .label, .btn {
-    color: $bs-mercury;
-    font-size: 10px;
-    line-height: 20px;
-    @include tablet {
-        font-size: 12px;
-        line-height: 20px;
-    }
+    @extend %label-btn;
+}
+
+.btn {
+    font-family: "Avenir Next Bold";
+    text-transform: uppercase;
+    height: 30px;
+    border-radius: 4px;
+    min-width: 150px;
 }
 
 header {
