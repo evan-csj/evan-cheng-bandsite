@@ -1,9 +1,13 @@
 let shows = document.getElementById('shows');
+let headerDiv = document.createElement("div");
+headerDiv.classList.add("shows__header")
+shows.appendChild(headerDiv);
 let showsHeader = document.createElement("h2");
 showsHeader.innerText = "Shows";
+headerDiv.appendChild(showsHeader);
+
 let events = document.createElement("div");
 events.classList.add("events");
-shows.appendChild(showsHeader);
 shows.appendChild(events);
 
 let currentEventsList = [
@@ -73,12 +77,6 @@ currentEventsList.forEach((item, index) => {
     venueTag.classList.add("event__tag");
     locationTag.classList.add("event__tag");
 
-    if (index !== 0) {
-        dateTag.classList.add("event__tag--mobile");
-        venueTag.classList.add("event__tag--mobile");
-        locationTag.classList.add("event__tag--mobile");
-    }
-
     date.classList.add("event__date");
     venue.classList.add("event__venue");
     location.classList.add("event__location");
@@ -100,11 +98,11 @@ currentEventsList.forEach((item, index) => {
         button.classList.add("event__btn");
         button.innerText = "Buy Tickets";
         event.appendChild(button);
+        events.appendChild(event);
     } else {
         let empty = document.createElement("p");
         empty.innerText = "";
         event.appendChild(empty);
+        headerDiv.appendChild(event);
     }
-
-    events.appendChild(event);
 });

@@ -19,8 +19,11 @@
     }
     @include desktop {
         width: calc($desktop-column * $n + $desktop-gutter * ($n - 1));
-        
     }
+}
+
+@mixin width-show($n) {
+    width: calc($desktop-column * $n + $desktop-gutter * ($n - 1)) + 2 * $event-padding;
 }
 
 @mixin padding-headline {

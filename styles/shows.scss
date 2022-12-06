@@ -43,13 +43,75 @@ section.hero {
     }
 }
 
-section.shows {
-    h2 {
-        @include margin-headline();
+%tag {
+    font-family: "Avenir Next Demi";
+    @extend %label-btn;
+    text-transform: uppercase;
+    color: $bs-silver;
+}
+
+%event {
+    border-bottom: 1px solid $bs-mercury;
+    padding: 0 $mobile-margin $mobile-padding;
+    display: flex;
+    flex-direction: column;
+    row-gap: $mobile-padding;
+
+    @include tablet {
+        flex-direction: row;
+        padding: calc($tablet-padding / 2) $event-padding;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
-div.events {
+.shows {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        @include margin-edge;
+
+        @include desktop {
+            @include width-grid(12);
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+            h2 {
+                @include width-grid(3);
+            }
+        }
+
+        .event {
+            display: none;
+            padding: 0;
+            border: 0;
+            @extend %event;
+            &__tag {
+                @extend %tag;
+            }
+
+            @include tablet {
+                display: flex;
+
+                &>* {
+                    @include width-grid(3);
+                }
+            }
+
+            @include desktop {
+                @include width-grid(9);
+                &>* {
+                    @include width-grid(2);
+                }
+                div:nth-child(1) {
+                    @include width-grid(3);
+                }
+            }
+        }
+    }
+}
+
+.events {
     display: flex;
     flex-direction: column;
     row-gap: $mobile-padding;
@@ -61,23 +123,23 @@ div.events {
         padding-bottom: $tablet-padding;
     }
 
-    .event {
-        border-bottom: 1px solid $bs-mercury;
-        padding: 0 $mobile-margin $mobile-padding;
-        display: flex;
-        flex-direction: column;
-        row-gap: $mobile-padding;
+    @include desktop {
+        @include width-grid(12);
+        @include margin-edge;
+        align-items: flex-end;
+    }
 
-        &__date, &__tag {
+    .event {
+        @extend %event;
+
+        &__date {
             font-family: "Avenir Next Demi";
         }
-
+    
         &__tag {
-            @extend %label-btn;
-            text-transform: uppercase;
-            color: $bs-silver;
+            @extend %tag;
         }
-
+    
         &__btn {
             @extend .btn;
             color: $bs-white;
@@ -86,29 +148,24 @@ div.events {
             width: 100%;
         }
 
-        &:first-child {
-            display: none;
-        }
-
         @include tablet {
-            flex-direction: row;
-            padding: calc($tablet-padding / 2) calc($tablet-padding - $mobile-padding);
-            justify-content: space-between;
-            align-items: center;
-
             &>* {
                 @include width-grid(3);
             }
-
-            &__tag--mobile {
+    
+            &__tag {
                 display: none;
             }
+        }
 
-            &:first-child {
-                display: flex;
-                border: 0;
-                padding-top: 0;
-                padding-bottom: 0;
+        @include desktop {
+            transform: translateX($event-padding);
+            @include width-show(9);
+            &>* {
+                @include width-grid(2);
+            }
+            div:nth-child(1) {
+                @include width-grid(3);
             }
         }
     }

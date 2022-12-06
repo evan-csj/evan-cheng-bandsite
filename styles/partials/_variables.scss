@@ -20,6 +20,8 @@ $mobile-padding: 16px;
 $tablet-padding: 36px;
 $desktop-padding: 36px;
 
+$event-padding: $tablet-margin - $mobile-margin;
+
 @font-face {
     font-family: "Avenir Next Regular";
     src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"),
