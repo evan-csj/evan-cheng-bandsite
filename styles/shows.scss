@@ -94,7 +94,7 @@
 
     @include tablet {
         flex-direction: row;
-        padding: calc($tablet-padding / 2) $event-padding;
+        padding: calc($tablet-gutter / 2) $event-padding;
         justify-content: space-between;
         align-items: center;
     }
@@ -104,7 +104,7 @@
     &__header {
         display: flex;
         flex-direction: column;
-        @include margin-edge;
+        @include margin-edge();
 
         @include desktop {
             @include width-grid(12);
@@ -153,14 +153,14 @@
     padding-bottom: $mobile-padding;
 
     @include tablet {
-        margin: 0 $mobile-margin;
+        margin: 0 calc($tablet-margin - $event-padding);
         row-gap: 0;
         padding-bottom: $tablet-padding;
     }
 
     @include desktop {
         @include width-grid(12);
-        @include margin-edge;
+        @include margin-edge();
         align-items: flex-end;
     }
 
@@ -202,6 +202,14 @@
             div:nth-child(1) {
                 @include width-grid(3);
             }
+        }
+        
+        &:hover {
+            background-color: $bs-alabaster;
+        }
+
+        &:focus {
+            background-color: $bs-mercury;
         }
     }
 }

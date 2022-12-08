@@ -72,6 +72,7 @@ currentEventsList.forEach((item, index) => {
     location.innerText = item.location;
 
     event.classList.add("event");
+    event.setAttribute("tabindex", "0")
 
     dateTag.classList.add("event__tag");
     venueTag.classList.add("event__tag");

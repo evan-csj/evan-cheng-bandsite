@@ -180,6 +180,7 @@ img.logo {
   height: 30px;
   border-radius: 4px;
   min-width: 150px;
+  cursor: pointer;
 }
 
 header {
@@ -619,7 +620,7 @@ footer .copy-right {
 @media only screen and (min-width: 768px) {
   .events .event, .shows__header .event {
     flex-direction: row;
-    padding: 18px 20px;
+    padding: 12px 18px;
     justify-content: space-between;
     align-items: center;
   }
@@ -750,7 +751,7 @@ footer .copy-right {
 }
 @media only screen and (min-width: 768px) {
   .events {
-    margin: 0 16px;
+    margin: 0 18px;
     row-gap: 0;
     padding-bottom: 36px;
   }
@@ -813,8 +814,8 @@ footer .copy-right {
 }
 @media only screen and (min-width: 1280px) {
   .events .event {
-    transform: translateX(20px);
-    width: 799px;
+    transform: translateX(18px);
+    width: 795px;
   }
   .events .event > * {
     width: 100%;
@@ -844,4 +845,10 @@ footer .copy-right {
   .events .event div:nth-child(1) {
     width: 237px;
   }
+}
+.events .event:hover {
+  background-color: #FAFAFA;
+}
+.events .event:focus {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */
