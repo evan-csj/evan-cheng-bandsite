@@ -612,7 +612,7 @@ footer .copy-right {
 
 .events .event, .shows__header .event {
   border-bottom: 1px solid #E1E1E1;
-  padding: 0 16px 16px;
+  padding: 16px 16px;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -640,6 +640,9 @@ footer .copy-right {
   .shows__header {
     margin: 0 auto;
   }
+}
+.shows__header h2 {
+  padding-bottom: 0;
 }
 @media only screen and (min-width: 1280px) {
   .shows__header {
@@ -676,7 +679,7 @@ footer .copy-right {
 }
 .shows__header .event {
   display: none;
-  padding: 0;
+  padding: 24px 0 0 0;
   border: 0;
 }
 @media only screen and (min-width: 768px) {
@@ -700,6 +703,7 @@ footer .copy-right {
 @media only screen and (min-width: 1280px) {
   .shows__header .event {
     width: 100%;
+    padding-bottom: 12px;
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 768px) {
@@ -746,7 +750,6 @@ footer .copy-right {
 .events {
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
   padding-bottom: 16px;
 }
 @media only screen and (min-width: 768px) {

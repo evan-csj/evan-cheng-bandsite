@@ -87,7 +87,7 @@
 
 %event {
     border-bottom: 1px solid $bs-mercury;
-    padding: 0 $mobile-margin $mobile-padding;
+    padding: $mobile-padding $mobile-margin;
     display: flex;
     flex-direction: column;
     row-gap: $mobile-padding;
@@ -105,6 +105,9 @@
         display: flex;
         flex-direction: column;
         @include margin-edge();
+        h2 {
+            padding-bottom: 0;
+        }
 
         @include desktop {
             @include width-grid(12);
@@ -118,7 +121,7 @@
 
         .event {
             display: none;
-            padding: 0;
+            padding: $tablet-gutter 0 0 0;
             border: 0;
             @extend %event;
             &__tag {
@@ -135,6 +138,7 @@
 
             @include desktop {
                 @include width-grid(9);
+                padding-bottom: calc($desktop-gutter / 2);
                 &>* {
                     @include width-grid(2);
                 }
@@ -149,7 +153,6 @@
 .events {
     display: flex;
     flex-direction: column;
-    row-gap: $mobile-padding;
     padding-bottom: $mobile-padding;
 
     @include tablet {
