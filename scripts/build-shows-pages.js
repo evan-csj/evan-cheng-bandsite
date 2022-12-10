@@ -1,16 +1,16 @@
-let shows = document.getElementById('shows');
-let headerDiv = document.createElement("div");
-headerDiv.classList.add("shows__header")
+const shows = document.getElementById("shows");
+const headerDiv = document.createElement("div");
+headerDiv.classList.add("shows__header");
 shows.appendChild(headerDiv);
-let showsHeader = document.createElement("h2");
+const showsHeader = document.createElement("h2");
 showsHeader.innerText = "Shows";
 headerDiv.appendChild(showsHeader);
 
-let events = document.createElement("div");
+const events = document.createElement("div");
 events.classList.add("events");
 shows.appendChild(events);
 
-let currentEventsList = [
+const currentEventsList = [
     {
         date: "",
         venue: "",
@@ -72,7 +72,7 @@ currentEventsList.forEach((item, index) => {
     location.innerText = item.location;
 
     event.classList.add("event");
-    event.setAttribute("tabindex", "0")
+    event.setAttribute("tabindex", "0");
 
     dateTag.classList.add("event__tag");
     venueTag.classList.add("event__tag");
