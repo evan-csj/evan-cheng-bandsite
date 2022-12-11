@@ -68,13 +68,24 @@
             </div>
         </section>
 
-        <section class="conversation" id="conversation"></section>
+        <section class="conversation">
+            <h2>Join the Conversation</h2>
+            <div class="conversation__form">
+                <img src="./assets/images/Mohan-muruge.jpg" alt="profile-photo" class="conversation__form-photo">
+                <form action="">
+                    <label for="form-name" class="conversation__form-label">Name</label>
+                    <input type="text" class="conversation__form-name" id="form-name" placeholder="Enter your name" required>
+                    <label for="form-comment" class="conversation__form-label">Comment</label>
+                    <input type="text" class="conversation__form-comment" id="form-comment" placeholder="Add a new comment" required>
+                </form>
+            </div>
+            <div class="conversation__comments" id="comments"></div>
+        </section>
     </main>
     <footer>
         <div>
             <div class="touch">
                 <h2>Get in Touch</h2>
-                
                 <div class="icons">
                     <a href="https://www.instagram.com/" target="_blank">
                         <img src="./assets/icons/Icon-instagram.svg" alt="instagram" class="icon">

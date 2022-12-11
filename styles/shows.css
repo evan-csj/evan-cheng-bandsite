@@ -108,13 +108,13 @@ p, footer h4, footer p, footer a {
   }
 }
 
-.events .event__tag, .shows__header .event__tag, .label, .btn, .events .event__btn {
+.events .event__label, .shows__header .event__label, .label, .btn, .events .event__btn {
   color: #E1E1E1;
   font-size: 10px;
   line-height: 20px;
 }
 @media only screen and (min-width: 768px) {
-  .events .event__tag, .shows__header .event__tag, .label, .btn, .events .event__btn {
+  .events .event__label, .shows__header .event__label, .label, .btn, .events .event__btn {
     font-size: 12px;
     line-height: 20px;
   }
@@ -604,7 +604,7 @@ footer .copy-right {
   }
 }
 
-.events .event__tag, .shows__header .event__tag {
+.events .event__label, .shows__header .event__label {
   font-family: "Avenir Next Demi";
   text-transform: uppercase;
   color: #AFAFAF;
@@ -811,7 +811,7 @@ footer .copy-right {
   }
 }
 @media only screen and (min-width: 768px) {
-  .events .event__tag {
+  .events .event__label {
     display: none;
   }
 }

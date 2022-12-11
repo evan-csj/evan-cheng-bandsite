@@ -158,8 +158,21 @@ h2 {
     }
 }
 
+%profile-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
 .conversation {
     @include margin-edge();
+    &__form {
+        &-photo {
+            object-fit: cover;
+            object-position: 25% 50%;
+            @extend %profile-photo;
+        }
+    }
     &__comments {
         padding-bottom: $mobile-padding;
     }
@@ -173,11 +186,9 @@ h2 {
     border-bottom: 1px solid $bs-mercury;
     padding: $mobile-gutter 0;
 
-    &__icon {
-        width: 36px;
-        height: 36px;
+    &__photo {
+        @extend %profile-photo;
         background-color: $bs-mercury;
-        border-radius: 50%;
     }
 
     &__name {

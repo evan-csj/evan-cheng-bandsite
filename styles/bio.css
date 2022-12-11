@@ -771,6 +771,12 @@ h2 {
   }
 }
 
+.comment__photo, .conversation__form-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
 .conversation {
   margin: 0 16px;
 }
@@ -784,6 +790,12 @@ h2 {
     margin: 0 auto;
   }
 }
+.conversation__form-photo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 25% 50%;
+     object-position: 25% 50%;
+}
 .conversation__comments {
   padding-bottom: 16px;
 }
@@ -796,11 +808,8 @@ h2 {
   border-bottom: 1px solid #E1E1E1;
   padding: 16px 0;
 }
-.comment__icon {
-  width: 36px;
-  height: 36px;
+.comment__photo {
   background-color: #E1E1E1;
-  border-radius: 50%;
 }
 .comment__name {
   font-family: "Avenir Next Demi";

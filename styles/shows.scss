@@ -78,7 +78,7 @@
     }
 }
 
-%tag {
+%label {
     font-family: "Avenir Next Demi";
     @extend %label-btn;
     text-transform: uppercase;
@@ -124,8 +124,8 @@
             padding: $tablet-gutter 0 0 0;
             border: 0;
             @extend %event;
-            &__tag {
-                @extend %tag;
+            &__label {
+                @extend %label;
             }
 
             @include tablet {
@@ -174,8 +174,8 @@
             font-family: "Avenir Next Demi";
         }
     
-        &__tag {
-            @extend %tag;
+        &__label {
+            @extend %label;
         }
     
         &__btn {
@@ -191,7 +191,7 @@
                 @include width-grid(3);
             }
     
-            &__tag {
+            &__label {
                 display: none;
             }
         }

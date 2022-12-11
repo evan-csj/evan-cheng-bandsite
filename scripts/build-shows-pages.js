@@ -52,20 +52,20 @@ currentEventsList.forEach((item, index) => {
     let event = document.createElement("div");
 
     let dateDiv = document.createElement("div");
-    let dateTag = document.createElement("p");
+    let dateLabel = document.createElement("label");
     let date = document.createElement("p");
 
     let venueDiv = document.createElement("div");
-    let venueTag = document.createElement("p");
+    let venueLabel = document.createElement("label");
     let venue = document.createElement("p");
 
     let locationDiv = document.createElement("div");
-    let locationTag = document.createElement("p");
+    let locationLabel = document.createElement("label");
     let location = document.createElement("p");
 
-    dateTag.innerText = "Date";
-    venueTag.innerText = "Venue";
-    locationTag.innerText = "Location";
+    dateLabel.innerText = "Date";
+    venueLabel.innerText = "Venue";
+    locationLabel.innerText = "Location";
 
     date.innerText = item.date;
     venue.innerText = item.venue;
@@ -74,23 +74,23 @@ currentEventsList.forEach((item, index) => {
     event.classList.add("event");
     event.setAttribute("tabindex", "0");
 
-    dateTag.classList.add("event__tag");
-    venueTag.classList.add("event__tag");
-    locationTag.classList.add("event__tag");
+    dateLabel.classList.add("event__label");
+    venueLabel.classList.add("event__label");
+    locationLabel.classList.add("event__label");
 
     date.classList.add("event__date");
     venue.classList.add("event__venue");
     location.classList.add("event__location");
 
-    dateDiv.appendChild(dateTag);
+    dateDiv.appendChild(dateLabel);
     dateDiv.appendChild(date);
     event.appendChild(dateDiv);
 
-    venueDiv.appendChild(venueTag);
+    venueDiv.appendChild(venueLabel);
     venueDiv.appendChild(venue);
     event.appendChild(venueDiv);
 
-    locationDiv.appendChild(locationTag);
+    locationDiv.appendChild(locationLabel);
     locationDiv.appendChild(location);
     event.appendChild(locationDiv);
 

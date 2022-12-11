@@ -1,18 +1,18 @@
 const defaultComment = [
     {
-        icon: "",
+        photo: "",
         name: "Conner Walton",
         date: "02/17/2021",
         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
     },
     {
-        icon: "",
+        photo: "",
         name: "Emilie Beach",
         date: "01/09/2021",
         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
     },
     {
-        icon: "",
+        photo: "",
         name: "Miles Acosta",
         date: "12/20/2020",
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
@@ -20,13 +20,13 @@ const defaultComment = [
 ];
 
 let displayComment = function (userComment) {
-    let comment = document.createElement("div");
+    let comment = document.createElement("article");
     comment.classList.add("comment");
     let leftDiv = document.createElement("div");
     let icon;
-    if (userComment.icon === "") {
+    if (userComment.photo === "") {
         icon = document.createElement("div");
-        icon.classList.add("comment__icon");
+        icon.classList.add("comment__photo");
     }
     leftDiv.appendChild(icon);
     comment.appendChild(leftDiv);
@@ -53,17 +53,7 @@ let displayComment = function (userComment) {
     return comment;
 }
 
-const conversation = document.getElementById("conversation");
-const headerDiv = document.createElement("h2");
-headerDiv.classList.add("conversation__header");
-headerDiv.innerText = "Join the Conversation";
-const formDiv = document.createElement("div");
-formDiv.classList.add("conversation__form");
-const commentsDiv = document.createElement("div");
-commentsDiv.classList.add("conversation__comments");
-conversation.appendChild(headerDiv);
-// conversation.appendChild(formDiv);
-conversation.appendChild(commentsDiv);
+const commentsDiv = document.getElementById("comments");
 
 for (let i = 0; i < defaultComment.length; i++) {
     let userComment = displayComment(defaultComment[i]);
