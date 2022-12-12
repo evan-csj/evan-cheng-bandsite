@@ -78,13 +78,6 @@
     }
 }
 
-%label {
-    font-family: "Avenir Next Demi";
-    @extend %label-btn;
-    text-transform: uppercase;
-    color: $bs-silver;
-}
-
 %event {
     border-bottom: 1px solid $bs-mercury;
     padding: $mobile-padding $mobile-margin;
@@ -125,7 +118,7 @@
             border: 0;
             @extend %event;
             &__label {
-                @extend %label;
+                @extend .label;
             }
 
             @include tablet {
@@ -175,14 +168,11 @@
         }
     
         &__label {
-            @extend %label;
+            @extend .label;
         }
     
         &__btn {
             @extend .btn;
-            color: $bs-white;
-            background-color: $bs-black;
-            border: 0;
             width: 100%;
         }
 

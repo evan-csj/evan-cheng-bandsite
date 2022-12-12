@@ -4,6 +4,7 @@ $bs-white: #FFFFFF;
 $bs-darkblack: #000000;
 $bs-mercury: #E1E1E1;
 $bs-alabaster: #FAFAFA;
+$bs-error: #D22D2D;
 
 $min-gap: 8px;
 
@@ -21,6 +22,13 @@ $mobile-gutter: 16px;
 $mobile-padding: 16px;
 $tablet-padding: 36px;
 $desktop-padding: 36px;
+
+$mobile-field-height: 36px;
+$tablet-field-height: 48px;
+$mobile-field-padding: 12px;
+$tablet-field-padding: 16px;
+$field-label: 4px;
+$field-radius: 4px;
 
 $event-padding: 18px;
 

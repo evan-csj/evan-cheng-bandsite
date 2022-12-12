@@ -50,6 +50,7 @@
   margin: 0;
   font-family: "Avenir Next Regular";
   box-sizing: border-box;
+  outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -108,13 +109,13 @@ p, footer h4, footer p, footer a {
   }
 }
 
-.events .event__label, .shows__header .event__label, .label, .btn, .events .event__btn {
+.label, .events .event__label, .shows__header .event__label, .btn, .events .event__btn {
   color: #E1E1E1;
   font-size: 10px;
   line-height: 20px;
 }
 @media only screen and (min-width: 768px) {
-  .events .event__label, .shows__header .event__label, .label, .btn, .events .event__btn {
+  .label, .events .event__label, .shows__header .event__label, .btn, .events .event__btn {
     font-size: 12px;
     line-height: 20px;
   }
@@ -174,13 +175,32 @@ img.logo {
   height: 20px;
 }
 
+.label, .events .event__label, .shows__header .event__label {
+  font-family: "Avenir Next Demi";
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+
 .btn, .events .event__btn {
   font-family: "Avenir Next Bold";
   text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #323232;
+  border: 0;
   height: 30px;
   border-radius: 4px;
   min-width: 150px;
   cursor: pointer;
+}
+
+.field {
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+  resize: none;
+  padding-left: 12px;
+}
+.field:focus {
+  border-color: #323232;
 }
 
 header {
@@ -290,7 +310,7 @@ header > div nav ul li {
     justify-content: center;
   }
 }
-header > div nav ul li .label {
+header > div nav ul li .label, header > div nav ul li .events .event__label, .events header > div nav ul li .event__label, header > div nav ul li .shows__header .event__label, .shows__header header > div nav ul li .event__label {
   color: #E1E1E1;
   display: flex;
   width: 100%;
@@ -299,12 +319,12 @@ header > div nav ul li .label {
   border-top: rgba(50, 50, 50, 0) solid 5px;
 }
 @media only screen and (min-width: 768px) {
-  header > div nav ul li .label {
+  header > div nav ul li .label, header > div nav ul li .events .event__label, .events header > div nav ul li .event__label, header > div nav ul li .shows__header .event__label, .shows__header header > div nav ul li .event__label {
     width: auto;
     padding: 18px 0;
   }
 }
-header > div nav ul li .label:hover {
+header > div nav ul li .label:hover, header > div nav ul li .events .event__label:hover, .events header > div nav ul li .event__label:hover, header > div nav ul li .shows__header .event__label:hover, .shows__header header > div nav ul li .event__label:hover {
   color: #FFFFFF;
   border-bottom: #FFFFFF solid 5px;
 }
@@ -604,12 +624,6 @@ footer .copy-right {
   }
 }
 
-.events .event__label, .shows__header .event__label {
-  font-family: "Avenir Next Demi";
-  text-transform: uppercase;
-  color: #AFAFAF;
-}
-
 .events .event, .shows__header .event {
   border-bottom: 1px solid #E1E1E1;
   padding: 16px 16px;
@@ -790,9 +804,6 @@ footer .copy-right {
   font-family: "Avenir Next Demi";
 }
 .events .event__btn {
-  color: #FFFFFF;
-  background-color: #323232;
-  border: 0;
   width: 100%;
 }
 @media only screen and (min-width: 768px) {

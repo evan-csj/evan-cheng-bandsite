@@ -1,18 +1,22 @@
-const defaultComment = [
+const commentsDiv = document.getElementById("comments");
+const form = document.getElementById("form");
+const photoAddress = "../assets/images/Mohan-muruge.jpg";
+
+let defaultComment = [
     {
-        photo: "",
+        photo: false,
         name: "Conner Walton",
         date: "02/17/2021",
         comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
     },
     {
-        photo: "",
+        photo: false,
         name: "Emilie Beach",
         date: "01/09/2021",
         comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
     },
     {
-        photo: "",
+        photo: false,
         name: "Miles Acosta",
         date: "12/20/2020",
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
@@ -24,11 +28,17 @@ let displayComment = function (userComment) {
     comment.classList.add("comment");
     let leftDiv = document.createElement("div");
     let icon;
-    if (userComment.photo === "") {
-        icon = document.createElement("div");
-        icon.classList.add("comment__photo");
+    if (!userComment.photo) {
+        photo = document.createElement("div");
+        photo.classList.add("comment__photo");
+    } else {
+        photo = document.createElement("img");
+        photo.src = photoAddress;
+        photo.alt="profile-photo";
+        photo.classList.add("comment__photo--user");
     }
-    leftDiv.appendChild(icon);
+
+    leftDiv.appendChild(photo);
     comment.appendChild(leftDiv);
 
     let rightDiv = document.createElement("div");
@@ -53,9 +63,37 @@ let displayComment = function (userComment) {
     return comment;
 }
 
-const commentsDiv = document.getElementById("comments");
-
-for (let i = 0; i < defaultComment.length; i++) {
-    let userComment = displayComment(defaultComment[i]);
-    commentsDiv.appendChild(userComment);
+const refreshComments = () => {
+    commentsDiv.textContent = "";
+    for (let i = 0; i < defaultComment.length; i++) {
+        let userCommentDiv = displayComment(defaultComment[i]);
+        commentsDiv.appendChild(userCommentDiv);
+    }
 }
+
+let submitHandle = (event) => {
+    event.preventDefault();
+    // const name = event.target.name.value;
+    // const comment = event.target.comment.value;
+    const formData = new FormData(form);
+    // let newComment = {
+    //     photo: true,
+    //     name: name,
+    //     date: "01/01/2022",
+    //     comment: comment
+    // };
+
+    let newComment = {
+        photo: true,
+        name: formData.get("name"),
+        date: "01/01/2022",
+        comment: formData.get("comment")
+    };
+
+    defaultComment.unshift(newComment);
+    event.target.reset();
+    refreshComments(commentsDiv);
+}
+
+refreshComments();
+form.addEventListener("submit", submitHandle);

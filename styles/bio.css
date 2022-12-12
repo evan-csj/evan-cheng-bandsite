@@ -50,6 +50,7 @@
   margin: 0;
   font-family: "Avenir Next Regular";
   box-sizing: border-box;
+  outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -108,13 +109,13 @@ p, footer h4, footer p, footer a {
   }
 }
 
-.label, .btn {
+.label, .conversation__form-label, .btn, .conversation__form-button {
   color: #E1E1E1;
   font-size: 10px;
   line-height: 20px;
 }
 @media only screen and (min-width: 768px) {
-  .label, .btn {
+  .label, .conversation__form-label, .btn, .conversation__form-button {
     font-size: 12px;
     line-height: 20px;
   }
@@ -174,13 +175,32 @@ img.logo {
   height: 20px;
 }
 
-.btn {
+.label, .conversation__form-label {
+  font-family: "Avenir Next Demi";
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+
+.btn, .conversation__form-button {
   font-family: "Avenir Next Bold";
   text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #323232;
+  border: 0;
   height: 30px;
   border-radius: 4px;
   min-width: 150px;
   cursor: pointer;
+}
+
+.field {
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+  resize: none;
+  padding-left: 12px;
+}
+.field:focus {
+  border-color: #323232;
 }
 
 header {
@@ -290,7 +310,7 @@ header > div nav ul li {
     justify-content: center;
   }
 }
-header > div nav ul li .label {
+header > div nav ul li .label, header > div nav ul li .conversation__form-label {
   color: #E1E1E1;
   display: flex;
   width: 100%;
@@ -299,12 +319,12 @@ header > div nav ul li .label {
   border-top: rgba(50, 50, 50, 0) solid 5px;
 }
 @media only screen and (min-width: 768px) {
-  header > div nav ul li .label {
+  header > div nav ul li .label, header > div nav ul li .conversation__form-label {
     width: auto;
     padding: 18px 0;
   }
 }
-header > div nav ul li .label:hover {
+header > div nav ul li .label:hover, header > div nav ul li .conversation__form-label:hover {
   color: #FFFFFF;
   border-bottom: #FFFFFF solid 5px;
 }
@@ -771,10 +791,29 @@ h2 {
   }
 }
 
-.comment__photo, .conversation__form-photo {
+.comment__photo--user, .comment__photo, .conversation__form-photo {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 25% 50%;
+     object-position: 25% 50%;
+}
+@media only screen and (min-width: 768px) {
+  .comment__photo--user, .comment__photo, .conversation__form-photo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.comment, .conversation__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid #E1E1E1;
+  padding: 16px 0;
 }
 
 .conversation {
@@ -791,22 +830,31 @@ h2 {
   }
 }
 .conversation__form-photo {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 25% 50%;
-     object-position: 25% 50%;
+  transform: translateY(23px);
+}
+.conversation__form-name {
+  height: 36px;
+}
+.conversation__form-comment {
+  padding-top: 12px;
+}
+.conversation__form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.conversation__form form div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .conversation__comments {
   padding-bottom: 16px;
 }
 
 .comment {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 8px;
-  border-bottom: 1px solid #E1E1E1;
-  padding: 16px 0;
+  width: 100%;
 }
 .comment__photo {
   background-color: #E1E1E1;
@@ -818,6 +866,10 @@ h2 {
   font-family: "Avenir Next Demi";
   color: #AFAFAF;
 }
+.comment__content {
+  width: 100%;
+  white-space: pre-wrap;
+}
 .comment div:nth-child(2) {
   width: 100%;
   display: flex;
@@ -825,6 +877,7 @@ h2 {
   row-gap: 8px;
 }
 .comment div:nth-child(2) div {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

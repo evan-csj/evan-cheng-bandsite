@@ -5,6 +5,7 @@
     margin: 0;
     font-family: "Avenir Next Regular";
     box-sizing: border-box;
+    outline: none;
 }
 
 ::-webkit-scrollbar { 
@@ -61,7 +62,7 @@
     }
 }
 
-%label-btn {
+%label, %button {
     color: $bs-mercury;
     font-size: 10px;
     line-height: 20px;
@@ -111,17 +112,34 @@ img.logo {
     height: 20px;
 }
 
-.label, .btn {
-    @extend %label-btn;
+.label {
+    @extend %label;
+    font-family: "Avenir Next Demi";
+    text-transform: uppercase;
+    color: $bs-silver;
 }
 
 .btn {
+    @extend %button;
     font-family: "Avenir Next Bold";
     text-transform: uppercase;
+    color: $bs-white;
+    background-color: $bs-black;
+    border: 0;
     height: 30px;
     border-radius: 4px;
     min-width: 150px;
     cursor: pointer;
+}
+
+.field {
+    border-radius: $field-radius;
+    border: 1px solid $bs-mercury;
+    resize: none;
+    padding-left: 12px;
+    &:focus {
+        border-color: $bs-black;
+    }
 }
 
 header {
