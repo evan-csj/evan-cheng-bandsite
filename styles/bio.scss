@@ -214,6 +214,14 @@ h2 {
 
         &-button {
             @extend .btn;
+            
+            @include tablet {
+                @include width-grid(3);
+                align-self: flex-end;
+            }
+            @include desktop {
+                @include width-grid(2);
+            }
         }
 
         &-name {

@@ -847,6 +847,37 @@ h2 {
 .conversation__form-photo {
   transform: translateY(23px);
 }
+@media only screen and (min-width: 768px) {
+  .conversation__form-button {
+    width: 100%;
+    align-self: flex-end;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .conversation__form-button {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .conversation__form-button {
+    width: 237px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .conversation__form-button {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .conversation__form-button {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .conversation__form-button {
+    width: 150px;
+  }
+}
 .conversation__form-name {
   height: 36px;
 }
