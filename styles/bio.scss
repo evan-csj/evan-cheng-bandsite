@@ -159,15 +159,15 @@ h2 {
 }
 
 %profile-photo {
-    width: 36px;
-    height: 36px;
+    width: $mobile-photo-size;
+    height: $mobile-photo-size;
     border-radius: 50%;
     object-fit: cover;
     object-position: 25% 50%;
 
     @include tablet {
-        width: 48px;
-        height: 48px;
+        width: $tablet-photo-size;
+        height: $tablet-photo-size;
     }
 }
 
@@ -175,30 +175,59 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: $min-gap;
+    gap: $mobile-gutter;
     border-bottom: 1px solid $bs-mercury;
     padding: $mobile-gutter 0;
+    @include tablet {
+        gap: $tablet-gutter;
+        padding: $tablet-gutter 0;
+    }
+}
+
+.field {
+    border-radius: $field-radius;
+    border: 1px solid $bs-mercury;
+    resize: none;
+    padding-left: 12px;
+    &:focus {
+        border-color: $bs-black;
+    }
+
+    @include tablet {
+        padding-left: 16px;
+    }
 }
 
 .conversation {
     @include margin-edge();
     &__form {
+        padding-top: 0;
         @extend %comment-format;
         &-photo {
             @extend %profile-photo;
             transform: translateY(23px);
         }
+
         &-label {
             @extend .label;
         }
+
         &-button {
             @extend .btn;
         }
+
         &-name {
-            height: 36px;
+            height: $mobile-photo-size;
+            @include tablet {
+                height: $tablet-photo-size;
+            }
         }
+
         &-comment {
             padding-top: 12px;
+            @include tablet {
+                padding-top: 16px;
+            }
         }
 
         form {
@@ -212,11 +241,25 @@ h2 {
                 flex-direction: column;
                 gap: $field-label;
             }
+
+            @include tablet {
+                gap: $tablet-gutter;
+            }
         }
     }
 
     &__comments {
         padding-bottom: $mobile-padding;
+    }
+
+    &__form, &__comments {
+        @include tablet {
+            @include width-grid(10);
+            margin: 0 auto;
+        }
+        @include desktop {
+            @include width-grid(6);
+        }
     }
 }
 
@@ -243,7 +286,14 @@ h2 {
 
     &__content {
         width: 100%;
-        white-space: pre-wrap;
+        max-width: calc(100vw - 2 * $mobile-margin - $mobile-photo-size - $mobile-gutter);
+        overflow-wrap: break-word;
+        @include tablet {
+            max-width: calc((100vw - $tablet-margin * 2 - $tablet-gutter * 11) / 12 * 10 + 9 * $tablet-gutter - $tablet-photo-size - $tablet-gutter);
+        }
+        @include desktop {
+            max-width: calc($desktop-column * 6 + $desktop-gutter * 5  - $tablet-photo-size - $tablet-gutter);
+        }
     }
 
     div:nth-child(2) {

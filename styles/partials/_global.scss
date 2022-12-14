@@ -6,6 +6,7 @@
     font-family: "Avenir Next Regular";
     box-sizing: border-box;
     outline: none;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar { 
@@ -130,16 +131,6 @@ img.logo {
     border-radius: 4px;
     min-width: 150px;
     cursor: pointer;
-}
-
-.field {
-    border-radius: $field-radius;
-    border: 1px solid $bs-mercury;
-    resize: none;
-    padding-left: 12px;
-    &:focus {
-        border-color: $bs-black;
-    }
 }
 
 header {

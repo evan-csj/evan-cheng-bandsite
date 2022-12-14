@@ -2,6 +2,9 @@ const commentsDiv = document.getElementById("comments");
 const form = document.getElementById("form");
 const photoAddress = "../assets/images/Mohan-muruge.jpg";
 
+let date = new Date();
+let today = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
 let defaultComment = [
     {
         photo: false,
@@ -86,7 +89,7 @@ let submitHandle = (event) => {
     let newComment = {
         photo: true,
         name: formData.get("name"),
-        date: "01/01/2022",
+        date: today,
         comment: formData.get("comment")
     };
 
