@@ -285,6 +285,14 @@ h2 {
 
     &__name {
         font-family: "Avenir Next Demi";
+        max-width: calc(100vw - 200px);
+        overflow-wrap: break-word;
+        @include tablet {
+            max-width: 50vw;
+        }
+        @include desktop {
+            max-width: 300px;
+        }
     }
 
     &__date {
