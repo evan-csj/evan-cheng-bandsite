@@ -199,6 +199,7 @@ header {
                         padding: 8px 0;
                         justify-content: center;
                         border-top: rgba($bs-black, 0) solid 5px;
+                        text-transform: none;
 
                         @include tablet {
                             width: auto;

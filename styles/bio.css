@@ -308,6 +308,7 @@ header > div nav ul li .label, header > div nav ul li .conversation__form-label 
   padding: 8px 0;
   justify-content: center;
   border-top: rgba(50, 50, 50, 0) solid 5px;
+  text-transform: none;
 }
 @media only screen and (min-width: 768px) {
   header > div nav ul li .label, header > div nav ul li .conversation__form-label {
@@ -815,7 +816,7 @@ h2 {
 
 .field {
   border-radius: 4px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid;
   resize: none;
   padding-left: 12px;
 }
@@ -826,6 +827,14 @@ h2 {
   .field {
     padding-left: 16px;
   }
+}
+
+.no-error {
+  border-color: #E1E1E1;
+}
+
+.error {
+  border-color: #D22D2D;
 }
 
 .conversation {

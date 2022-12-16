@@ -1,6 +1,11 @@
 const commentsDiv = document.getElementById("comments");
 const form = document.getElementById("form");
+const formName = document.getElementById("form-name");
+const formComment = document.getElementById("form-comment");
+const nameErrorMsg = "Please enter valid name format: First-Name Last-Name";
+const commentErrorMsg = "Please enter something";
 const photoAddress = "../assets/images/Mohan-muruge.jpg";
+let submitStatus = false;
 
 let date;
 let today;
@@ -109,17 +114,19 @@ const dynamicDate = () => {
 
 const submitHandle = (event) => {
     event.preventDefault();
+    if (!submitStatus) return;
     getDate();
 
     const formData = new FormData(form);
-
+    let name = formData.get("name");
+    let comment = formData.get("comment");
     let newComment = {
         photo: true,
-        name: formData.get("name"),
+        name: name,
         date: today,
         time: time,
         showDate: "",
-        comment: formData.get("comment")
+        comment: comment
     };
 
     defaultComment.unshift(newComment);
@@ -128,5 +135,40 @@ const submitHandle = (event) => {
     refreshComments(commentsDiv);
 }
 
+const formCheck = (event) => {
+    const formData = new FormData(form);
+    let name = formData.get("name");
+    let comment = formData.get("comment");
+    let patternName = new RegExp("^[A-Z]([a-z]*)((\\s|\-)[A-Z]([a-z]*))+\\s*$");
+    let patternComment = new RegExp("^\\s+$");
+
+    if (patternName.test(name)) {
+        formName.classList.remove("error");
+        formName.classList.add("no-error");
+        formName.setCustomValidity("");
+    } else {
+        formName.classList.remove("no-error");
+        formName.classList.add("error");
+        formName.setCustomValidity(nameErrorMsg);
+    }
+
+    if (!patternComment.test(comment)) {
+        formComment.classList.remove("error");
+        formComment.classList.add("no-error");
+        formComment.setCustomValidity("");
+    } else {
+        formComment.classList.remove("no-error");
+        formComment.classList.add("error");
+        formComment.setCustomValidity(commentErrorMsg);
+    }
+
+    if (patternName.test(name) && !patternComment.test(comment)) {
+        submitStatus = true;
+    } else {
+        submitStatus = false;
+    }
+}
+
 refreshComments();
+form.addEventListener("keyup", formCheck);
 form.addEventListener("submit", submitHandle);

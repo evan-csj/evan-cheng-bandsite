@@ -186,9 +186,10 @@ h2 {
 
 .field {
     border-radius: $field-radius;
-    border: 1px solid $bs-mercury;
+    border: 1px solid;
     resize: none;
     padding-left: 12px;
+
     &:focus {
         border-color: $bs-black;
     }
@@ -196,6 +197,14 @@ h2 {
     @include tablet {
         padding-left: 16px;
     }
+}
+
+.no-error {
+    border-color: $bs-mercury;
+}
+
+.error {
+    border-color: $bs-error;
 }
 
 .conversation {
@@ -300,7 +309,7 @@ h2 {
         color: $bs-silver;
     }
 
-    &__content {
+    &__content { 
         width: 100%;
         max-width: calc(100vw - 2 * $mobile-margin - $mobile-photo-size - $mobile-gutter);
         overflow-wrap: break-word;

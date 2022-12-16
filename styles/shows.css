@@ -308,6 +308,7 @@ header > div nav ul li .label, header > div nav ul li .events .event__label, .ev
   padding: 8px 0;
   justify-content: center;
   border-top: rgba(50, 50, 50, 0) solid 5px;
+  text-transform: none;
 }
 @media only screen and (min-width: 768px) {
   header > div nav ul li .label, header > div nav ul li .events .event__label, .events header > div nav ul li .event__label, header > div nav ul li .shows__header .event__label, .shows__header header > div nav ul li .event__label {
