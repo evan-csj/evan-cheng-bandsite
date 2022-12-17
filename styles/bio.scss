@@ -189,6 +189,7 @@ h2 {
     border: 1px solid;
     resize: none;
     padding-left: 12px;
+    padding-right: 12px;
 
     &:focus {
         border-color: $bs-black;
@@ -196,6 +197,7 @@ h2 {
 
     @include tablet {
         padding-left: 16px;
+        padding-right: 16px;
     }
 }
 
