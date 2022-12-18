@@ -1,13 +1,11 @@
 const shows = document.getElementById("shows");
-const headerDiv = document.createElement("div");
-headerDiv.classList.add("shows__header");
+const headerDiv = createStandardElement("div", "shows__header");
 shows.appendChild(headerDiv);
-const showsHeader = document.createElement("h2");
-showsHeader.innerText = "Shows";
+
+const showsHeader = createStandardElement("h2", "", "Shows");
 headerDiv.appendChild(showsHeader);
 
-const events = document.createElement("div");
-events.classList.add("events");
+const events = createStandardElement("div", "events");
 shows.appendChild(events);
 
 const currentEventsList = [
@@ -49,38 +47,20 @@ const currentEventsList = [
 ];
 
 currentEventsList.forEach((item, index) => {
-    let event = document.createElement("div");
-
-    let dateDiv = document.createElement("div");
-    let dateLabel = document.createElement("label");
-    let date = document.createElement("p");
-
-    let venueDiv = document.createElement("div");
-    let venueLabel = document.createElement("label");
-    let venue = document.createElement("p");
-
-    let locationDiv = document.createElement("div");
-    let locationLabel = document.createElement("label");
-    let location = document.createElement("p");
-
-    dateLabel.innerText = "Date";
-    venueLabel.innerText = "Venue";
-    locationLabel.innerText = "Location";
-
-    date.innerText = item.date;
-    venue.innerText = item.venue;
-    location.innerText = item.location;
-
-    event.classList.add("event");
+    let event = createStandardElement("div", "event");
     event.setAttribute("tabindex", "0");
 
-    dateLabel.classList.add("event__label");
-    venueLabel.classList.add("event__label");
-    locationLabel.classList.add("event__label");
+    let dateDiv = createStandardElement("div");
+    let dateLabel = createStandardElement("label", "event__label", "Date");
+    let date = createStandardElement("p", "event__date", item.date);
 
-    date.classList.add("event__date");
-    venue.classList.add("event__venue");
-    location.classList.add("event__location");
+    let venueDiv = createStandardElement("div");
+    let venueLabel = createStandardElement("label", "event__label", "Venue");
+    let venue = createStandardElement("p", "event__venue", item.venue)
+
+    let locationDiv = createStandardElement("div");
+    let locationLabel = createStandardElement("label", "event__label", "Location")
+    let location = createStandardElement("p", "event__location", item.location);
 
     dateDiv.appendChild(dateLabel);
     dateDiv.appendChild(date);
@@ -95,14 +75,11 @@ currentEventsList.forEach((item, index) => {
     event.appendChild(locationDiv);
 
     if (index !== 0) {
-        let button = document.createElement("button");
-        button.classList.add("event__btn");
-        button.innerText = "Buy Tickets";
+        let button = createStandardElement("button", "event__btn", "Buy Tickets");
         event.appendChild(button);
         events.appendChild(event);
     } else {
-        let empty = document.createElement("p");
-        empty.innerText = "";
+        let empty = createStandardElement("p", "", "");
         event.appendChild(empty);
         headerDiv.appendChild(event);
     }

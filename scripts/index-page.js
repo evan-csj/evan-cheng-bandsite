@@ -32,40 +32,30 @@ let defaultComment = [
 ];
 
 const displayComment = function (userComment) {
-    let comment = document.createElement("article");
-    comment.classList.add("comment");
-    let leftDiv = document.createElement("div");
-    let icon;
+    let comment = createStandardElement("article", "comment");
+    let leftDiv = createStandardElement("div");
+    let photo;
     if (!userComment.photo) {
-        photo = document.createElement("div");
-        photo.classList.add("comment__photo");
+        photo = createStandardElement("div", "comment__photo");
     } else {
-        photo = document.createElement("img");
+        photo = createStandardElement("img", "comment__photo--user");
         photo.src = photoAddress;
         photo.alt="profile-photo";
-        photo.classList.add("comment__photo--user");
     }
 
     leftDiv.appendChild(photo);
     comment.appendChild(leftDiv);
 
-    let rightDiv = document.createElement("div");
-    let upperDiv = document.createElement("div");
-    let name = document.createElement("p");
-    name.classList.add("comment__name");
-    name.innerText = userComment.name;
-    let date = document.createElement("p");
-    date.classList.add("comment__date");
-    date.innerText = userComment.show;
+    let rightDiv = createStandardElement("div");
+    let upperDiv = createStandardElement("div");
+    let name = createStandardElement("p", "comment__name", userComment.name);
+    let date = createStandardElement("p", "comment__date", userComment.show);
     upperDiv.appendChild(name);
     upperDiv.appendChild(date);
 
-    let content = document.createElement("p");
-    content.classList.add("comment__content");
-    content.innerText = userComment.comment;
+    let content = createStandardElement("p", "comment__content", userComment.comment);
     rightDiv.appendChild(upperDiv);
     rightDiv.appendChild(content);
-
     comment.appendChild(rightDiv);
 
     return comment;
