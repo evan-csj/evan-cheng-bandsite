@@ -1,0 +1,860 @@
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+}
+* {
+  margin: 0;
+  font-family: "Avenir Next Regular";
+  box-sizing: border-box;
+  outline: none;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1, h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "Avenir Next Bold";
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "Avenir Next Demi";
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+p, footer h4, footer p, footer a {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  footer h4, footer p, footer a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.label, .events .event__label, .shows__header .event__label, .btn, .events .event__btn {
+  color: #E1E1E1;
+  font-size: 10px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .label, .events .event__label, .shows__header .event__label, .btn, .events .event__btn {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+h1 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+
+h2 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+
+h3 {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  height: 24px;
+}
+
+img.logo {
+  width: 120px;
+  height: 20px;
+}
+
+.label, .events .event__label, .shows__header .event__label {
+  font-family: "Avenir Next Demi";
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+
+.btn, .events .event__btn {
+  font-family: "Avenir Next Bold";
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #323232;
+  border: 0;
+  height: 30px;
+  border-radius: 4px;
+  min-width: 150px;
+  cursor: pointer;
+}
+
+header {
+  background-color: #323232;
+}
+header * {
+  color: #FFFFFF;
+}
+header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+}
+@media only screen and (min-width: 768px) {
+  header > div {
+    margin-left: 36px;
+    flex-direction: row;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  header > div {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  header > div {
+    width: 1020px;
+  }
+}
+header > div a.logo {
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  header > div a.logo {
+    width: 156px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div a.logo {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  header > div a.logo {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  header > div a.logo {
+    width: 150px;
+  }
+}
+header > div nav {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav {
+    width: 216px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div nav {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  header > div nav {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  header > div nav {
+    width: 150px;
+  }
+}
+header > div nav ul {
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav ul {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+}
+header > div nav ul li {
+  display: flex;
+  width: 50%;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav ul li {
+    width: 96px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  header > div nav ul li {
+    justify-content: center;
+  }
+}
+header > div nav ul li .label, header > div nav ul li .events .event__label, .events header > div nav ul li .event__label, header > div nav ul li .shows__header .event__label, .shows__header header > div nav ul li .event__label {
+  color: #E1E1E1;
+  display: flex;
+  width: 100%;
+  padding: 8px 0;
+  justify-content: center;
+  border-top: rgba(50, 50, 50, 0) solid 5px;
+  text-transform: none;
+}
+@media only screen and (min-width: 768px) {
+  header > div nav ul li .label, header > div nav ul li .events .event__label, .events header > div nav ul li .event__label, header > div nav ul li .shows__header .event__label, .shows__header header > div nav ul li .event__label {
+    width: auto;
+    padding: 18px 0;
+  }
+}
+header > div nav ul li .label:hover, header > div nav ul li .events .event__label:hover, .events header > div nav ul li .event__label:hover, header > div nav ul li .shows__header .event__label:hover, .shows__header header > div nav ul li .event__label:hover {
+  color: #FFFFFF;
+  border-bottom: #FFFFFF solid 5px;
+}
+header > div nav ul li .active {
+  font-family: "Avenir Next Bold";
+  color: #FFFFFF;
+  border-bottom: #FFFFFF solid 5px;
+}
+
+footer {
+  background-color: #323232;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer > div {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer > div {
+    margin: 0 auto;
+  }
+}
+footer * {
+  color: #FFFFFF;
+}
+footer h4 {
+  font-family: "Avenir Next Demi";
+}
+footer .booking, footer .touch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking, footer .touch {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking, footer .touch {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    margin: 0 16px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking, footer .touch {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking, footer .touch {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: calc((100vw - 72px - 264px) / 12 * 4 + 72px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 324px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 100%;
+    flex: none;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking > *, footer .touch > * {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking > *, footer .touch > * {
+    width: 237px;
+  }
+}
+footer .touch {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .touch {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+}
+footer .touch h2 {
+  padding: 0;
+  margin: 0;
+}
+footer .touch .icons {
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  flex-wrap: nowrap;
+}
+footer .touch div.logo {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  footer .touch div.logo {
+    display: block;
+  }
+  footer .touch div.logo img.logo {
+    display: inherit;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .touch div.logo {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .touch div.logo {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .touch div.logo {
+    width: 498px;
+  }
+}
+footer .booking__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .booking__contact {
+    row-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer .booking__contact:last-child {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  footer .booking__contact:last-child {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  footer .booking__contact:last-child {
+    width: 498px;
+  }
+}
+footer .copy-right {
+  padding-top: 48px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer .copy-right {
+    width: 100%;
+    padding-bottom: 40px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  footer .copy-right {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  footer .copy-right {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .copy-right .logo {
+    display: none;
+  }
+}
+
+.hero-bg {
+  position: relative;
+  background-image: url(../assets/images/hero-shows.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: rgba(50, 50, 50, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 1280px) {
+  .hero-bg {
+    background-position: 0 -120px;
+  }
+}
+
+.hero {
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .hero {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero {
+    margin: 0 auto;
+  }
+}
+.hero * {
+  z-index: 1;
+  padding: 0;
+  color: #FFFFFF;
+  white-space: normal;
+}
+.hero__header {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.hero iframe {
+  width: 100%;
+  height: 120px;
+}
+@media only screen and (min-width: 768px) {
+  .hero {
+    padding: 56px 0;
+    row-gap: 36px;
+  }
+  .hero__header {
+    width: 550px;
+    row-gap: 16px;
+  }
+  .hero iframe {
+    width: 430px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero {
+    padding: 240px 0;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .hero {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .hero {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__header {
+    width: 500px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero iframe {
+    width: 410px;
+  }
+}
+
+.events .event, .shows__header .event {
+  border-bottom: 1px solid #E1E1E1;
+  padding: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .events .event, .shows__header .event {
+    flex-direction: row;
+    padding: 12px 18px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.shows__header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .shows__header {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header {
+    margin: 0 auto;
+  }
+}
+.shows__header h2 {
+  padding-bottom: 0;
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .shows__header {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .shows__header {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header h2 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .shows__header h2 {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .shows__header h2 {
+    width: 237px;
+  }
+}
+.shows__header .event {
+  display: none;
+  padding: 24px 0 0 0;
+  border: 0;
+}
+@media only screen and (min-width: 768px) {
+  .shows__header .event {
+    display: flex;
+  }
+  .shows__header .event > * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .shows__header .event > * {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .shows__header .event > * {
+    width: 237px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header .event {
+    width: 100%;
+    padding-bottom: 12px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .shows__header .event {
+    width: calc((100vw - 72px - 264px) / 12 * 9 + 192px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .shows__header .event {
+    width: 759px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header .event > * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .shows__header .event > * {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .shows__header .event > * {
+    width: 150px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows__header .event div:nth-child(1) {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .shows__header .event div:nth-child(1) {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .shows__header .event div:nth-child(1) {
+    width: 237px;
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .events {
+    margin: 0 18px;
+    row-gap: 0;
+    padding-bottom: 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .events {
+    width: 100%;
+    margin: 0 16px;
+    align-items: flex-end;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .events {
+    width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .events {
+    width: 1020px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .events {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .events {
+    margin: 0 auto;
+  }
+}
+.events .event__date {
+  font-family: "Avenir Next Demi";
+}
+.events .event__btn {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .events .event > * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .events .event > * {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .events .event > * {
+    width: 237px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .events .event__label {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .events .event {
+    transform: translateX(18px);
+    width: 795px;
+  }
+  .events .event > * {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .events .event > * {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .events .event > * {
+    width: 150px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .events .event div:nth-child(1) {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .events .event div:nth-child(1) {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .events .event div:nth-child(1) {
+    width: 237px;
+  }
+}
+.events .event:hover {
+  background-color: #FAFAFA;
+}
+.events .event:focus {
+  background-color: #E1E1E1;
+}/*# sourceMappingURL=shows.css.map */

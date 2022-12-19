@@ -1,54 +1,56 @@
 @font-face {
   font-family: "Avenir Next Regular";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Demi";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Bold";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
 }
 @font-face {
   font-family: "Avenir Next Regular";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Demi";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Bold";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
 }
 @font-face {
   font-family: "Avenir Next Regular";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Demi";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Bold";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
 }
 @font-face {
   font-family: "Avenir Next Regular";
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Demi";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next Bold";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("turetype");
 }
 * {
   margin: 0;
   font-family: "Avenir Next Regular";
+  box-sizing: border-box;
+  outline: none;
   box-sizing: border-box;
 }
 
@@ -77,13 +79,13 @@ h1, h2 {
   }
 }
 
-main .about__quote-name, main .about__quote-content, h3 {
+.about__quote-name, .about__quote-content, h3 {
   font-size: 14px;
   line-height: 22px;
   font-family: "Avenir Next Demi";
 }
 @media only screen and (min-width: 768px) {
-  main .about__quote-name, main .about__quote-content, h3 {
+  .about__quote-name, .about__quote-content, h3 {
     font-size: 24px;
     line-height: 32px;
   }
@@ -104,6 +106,18 @@ p, footer h4, footer p, footer a {
 @media only screen and (min-width: 768px) {
   footer h4, footer p, footer a {
     font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.label, .conversation__form-label, .btn, .conversation__form-button {
+  color: #E1E1E1;
+  font-size: 10px;
+  line-height: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .label, .conversation__form-label, .btn, .conversation__form-button {
+    font-size: 12px;
     line-height: 20px;
   }
 }
@@ -162,16 +176,22 @@ img.logo {
   height: 20px;
 }
 
-.label, .btn {
-  color: #E1E1E1;
-  font-size: 10px;
-  line-height: 20px;
+.label, .conversation__form-label {
+  font-family: "Avenir Next Demi";
+  text-transform: uppercase;
+  color: #AFAFAF;
 }
-@media only screen and (min-width: 768px) {
-  .label, .btn {
-    font-size: 12px;
-    line-height: 20px;
-  }
+
+.btn, .conversation__form-button {
+  font-family: "Avenir Next Bold";
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #323232;
+  border: 0;
+  height: 30px;
+  border-radius: 4px;
+  min-width: 150px;
+  cursor: pointer;
 }
 
 header {
@@ -281,21 +301,22 @@ header > div nav ul li {
     justify-content: center;
   }
 }
-header > div nav ul li .label {
+header > div nav ul li .label, header > div nav ul li .conversation__form-label {
   color: #E1E1E1;
   display: flex;
   width: 100%;
   padding: 8px 0;
   justify-content: center;
   border-top: rgba(50, 50, 50, 0) solid 5px;
+  text-transform: none;
 }
 @media only screen and (min-width: 768px) {
-  header > div nav ul li .label {
+  header > div nav ul li .label, header > div nav ul li .conversation__form-label {
     width: auto;
     padding: 18px 0;
   }
 }
-header > div nav ul li .label:hover {
+header > div nav ul li .label:hover, header > div nav ul li .conversation__form-label:hover {
   color: #FFFFFF;
   border-bottom: #FFFFFF solid 5px;
 }
@@ -496,31 +517,33 @@ footer .copy-right {
   }
 }
 
-main * {
+* {
   color: #323232;
 }
-main h2 {
+
+h2 {
   align-self: flex-start;
 }
 @media only screen and (min-width: 1280px) {
-  main h2 {
+  h2 {
     width: 100%;
     margin: 0 auto;
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 768px) {
-  main h2 {
+  h2 {
     width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 1280px) {
-  main h2 {
+  h2 {
     width: 1020px;
   }
 }
-main .hero {
+
+.hero {
   position: relative;
-  background-image: url(../../assets/images/hero-bio.jpg);
+  background-image: url(../assets/images/hero-bio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -529,11 +552,11 @@ main .hero {
   align-items: center;
 }
 @media only screen and (min-width: 1280px) {
-  main .hero {
+  .hero {
     justify-content: center;
   }
 }
-main .hero::before {
+.hero::before {
   content: "";
   position: absolute;
   display: block;
@@ -543,67 +566,68 @@ main .hero::before {
   width: 100%;
   height: 100%;
 }
-main .hero h1 {
+.hero h1 {
   margin-left: 16px;
   color: #FFFFFF;
   z-index: 1;
 }
 @media only screen and (min-width: 768px) {
-  main .hero h1 {
+  .hero h1 {
     margin-left: 36px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .hero h1 {
+  .hero h1 {
     margin: 0 auto;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .hero h1 {
+  .hero h1 {
     width: 100%;
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 768px) {
-  main .hero h1 {
+  .hero h1 {
     width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 1280px) {
-  main .hero h1 {
+  .hero h1 {
     width: 1020px;
   }
 }
-main .about {
+
+.about {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 16px;
 }
 @media only screen and (min-width: 768px) {
-  main .about {
+  .about {
     margin: 0 36px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .about {
+  .about {
     margin: 0 auto;
   }
 }
-main .about .about__description, main .about .about__quote, main .about h3, main .about img {
+.about .about__description, .about .about__quote, .about h3, .about img {
   width: 100%;
   margin: 0 auto;
 }
 @media only screen and (min-width: 768px) {
-  main .about .about__description, main .about .about__quote, main .about h3, main .about img {
+  .about .about__description, .about .about__quote, .about h3, .about img {
     width: calc((100vw - 72px - 264px) / 12 * 10 + 216px);
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .about .about__description, main .about .about__quote, main .about h3, main .about img {
+  .about .about__description, .about .about__quote, .about h3, .about img {
     width: 846px;
   }
 }
-main .about img {
+.about img {
   height: 50vw;
   -o-object-fit: cover;
      object-fit: cover;
@@ -611,41 +635,41 @@ main .about img {
      object-position: bottom;
 }
 @media only screen and (min-width: 768px) {
-  main .about img {
+  .about img {
     height: 43vw;
     -o-object-position: center;
        object-position: center;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .about img {
+  .about img {
     height: 460px;
   }
 }
-main .about__quote {
+.about__quote {
   padding: 0;
   padding-top: 16px;
 }
 @media only screen and (min-width: 768px) {
-  main .about__quote {
+  .about__quote {
     padding-top: 36px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .about__quote-content {
+  .about__quote-content {
     width: 80%;
   }
 }
-main .about__quote-name {
+.about__quote-name {
   padding: 12px 0 0 0;
 }
 @media only screen and (min-width: 768px) {
-  main .about__quote-name {
+  .about__quote-name {
     font-size: 20px;
     padding: 18px 0 0 0;
   }
 }
-main .about__description {
+.about__description {
   padding: 0;
   padding-bottom: 16px;
   display: flex;
@@ -654,37 +678,38 @@ main .about__description {
   row-gap: 16px;
 }
 @media only screen and (min-width: 768px) {
-  main .about__description {
+  .about__description {
     padding-bottom: 36px;
   }
 }
 @media only screen and (min-width: 768px) {
-  main .about__description {
+  .about__description {
     flex-direction: row;
     -moz-column-gap: 36px;
          column-gap: 36px;
   }
 }
-main .gallery {
+
+.gallery {
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .gallery h2 {
+.gallery h2 {
   margin-left: 16px;
 }
 @media only screen and (min-width: 768px) {
-  main .gallery h2 {
+  .gallery h2 {
     margin-left: 36px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .gallery h2 {
+  .gallery h2 {
     margin: 0 auto;
   }
 }
-main .gallery .container {
+.gallery .container {
   margin: 0 16px;
   margin-bottom: 16px;
   display: flex;
@@ -693,35 +718,35 @@ main .gallery .container {
   gap: 16px;
 }
 @media only screen and (min-width: 768px) {
-  main .gallery .container {
+  .gallery .container {
     margin: 0 36px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .gallery .container {
+  .gallery .container {
     margin: 0 auto;
   }
 }
-main .gallery .container img {
+.gallery .container img {
   width: 100%;
   filter: grayscale(80%);
   transition: filter 0.5s;
 }
 @media only screen and (min-width: 768px) {
-  main .gallery .container img {
+  .gallery .container img {
     width: calc((100vw - 72px - 264px) / 12 * 4 + 72px);
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .gallery .container img {
+  .gallery .container img {
     width: 324px;
   }
 }
-main .gallery .container img:hover {
+.gallery .container img:hover {
   filter: grayscale(0%);
 }
 @media only screen and (min-width: 768px) {
-  main .gallery .container {
+  .gallery .container {
     width: 100%;
     margin: 0 auto;
     margin-bottom: 36px;
@@ -731,29 +756,255 @@ main .gallery .container img:hover {
   }
 }
 @media only screen and (min-width: 768px) and (min-width: 768px) {
-  main .gallery .container {
+  .gallery .container {
     width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
   }
 }
 @media only screen and (min-width: 768px) and (min-width: 1280px) {
-  main .gallery .container {
+  .gallery .container {
     width: 1020px;
   }
 }
 @media only screen and (min-width: 1280px) {
-  main .gallery .container {
+  .gallery .container {
     margin-bottom: 36px;
     gap: 24px;
     width: 100%;
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 768px) {
-  main .gallery .container {
+  .gallery .container {
     width: calc((100vw - 72px - 264px) / 12 * 12 + 264px);
   }
 }
 @media only screen and (min-width: 1280px) and (min-width: 1280px) {
-  main .gallery .container {
+  .gallery .container {
     width: 1020px;
   }
+}
+
+.comment__photo--user, .comment__photo, .conversation__form-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 25% 50%;
+     object-position: 25% 50%;
+}
+@media only screen and (min-width: 768px) {
+  .comment__photo--user, .comment__photo, .conversation__form-photo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.comment, .conversation__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #E1E1E1;
+  padding: 16px 0;
+}
+@media only screen and (min-width: 768px) {
+  .comment, .conversation__form {
+    gap: 24px;
+    padding: 24px 0;
+  }
+}
+
+.field {
+  border-radius: 4px;
+  border: 1px solid;
+  resize: none;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.field:focus {
+  border-color: #323232;
+}
+@media only screen and (min-width: 768px) {
+  .field {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.no-error {
+  border-color: #E1E1E1;
+}
+
+.error {
+  border-color: #D22D2D;
+}
+
+.conversation {
+  margin: 0 16px;
+}
+@media only screen and (min-width: 768px) {
+  .conversation {
+    margin: 0 36px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .conversation {
+    margin: 0 auto;
+  }
+}
+.conversation__form {
+  padding-top: 0;
+}
+.conversation__form-photo {
+  transform: translateY(23px);
+}
+@media only screen and (min-width: 768px) {
+  .conversation__form-button {
+    width: 100%;
+    align-self: flex-end;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .conversation__form-button {
+    width: calc((100vw - 72px - 264px) / 12 * 3 + 48px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .conversation__form-button {
+    width: 237px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .conversation__form-button {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .conversation__form-button {
+    width: calc((100vw - 72px - 264px) / 12 * 2 + 24px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .conversation__form-button {
+    width: 150px;
+  }
+}
+.conversation__form-name {
+  height: 36px;
+}
+@media only screen and (min-width: 768px) {
+  .conversation__form-name {
+    height: 48px;
+  }
+}
+.conversation__form-comment {
+  padding-top: 12px;
+}
+@media only screen and (min-width: 768px) {
+  .conversation__form-comment {
+    padding-top: 16px;
+  }
+}
+.conversation__form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.conversation__form form div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+@media only screen and (min-width: 768px) {
+  .conversation__form form {
+    gap: 24px;
+  }
+}
+.conversation__comments {
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .conversation__form, .conversation__comments {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .conversation__form, .conversation__comments {
+    width: calc((100vw - 72px - 264px) / 12 * 10 + 216px);
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .conversation__form, .conversation__comments {
+    width: 846px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .conversation__form, .conversation__comments {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 768px) {
+  .conversation__form, .conversation__comments {
+    width: calc((100vw - 72px - 264px) / 12 * 6 + 120px);
+  }
+}
+@media only screen and (min-width: 1280px) and (min-width: 1280px) {
+  .conversation__form, .conversation__comments {
+    width: 498px;
+  }
+}
+
+.comment {
+  width: 100%;
+}
+.comment__photo {
+  background-color: #E1E1E1;
+}
+.comment__name {
+  font-family: "Avenir Next Demi";
+  max-width: calc(100vw - 200px);
+  overflow-wrap: break-word;
+}
+@media only screen and (min-width: 768px) {
+  .comment__name {
+    max-width: 50vw;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comment__name {
+    max-width: 300px;
+  }
+}
+.comment__date {
+  font-family: "Avenir Next Demi";
+  color: #AFAFAF;
+}
+.comment__content {
+  width: 100%;
+  max-width: calc(100vw - 32px - 36px - 16px);
+  overflow-wrap: break-word;
+}
+@media only screen and (min-width: 768px) {
+  .comment__content {
+    max-width: calc((100vw - 72px - 264px) / 12 * 10 + 216px - 48px - 24px);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comment__content {
+    max-width: 426px;
+  }
+}
+.comment div:nth-child(2) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.comment div:nth-child(2) div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */

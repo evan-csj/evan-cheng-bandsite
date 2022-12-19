@@ -5,6 +5,8 @@
     margin: 0;
     font-family: "Avenir Next Regular";
     box-sizing: border-box;
+    outline: none;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar { 
@@ -61,6 +63,16 @@
     }
 }
 
+%label, %button {
+    color: $bs-mercury;
+    font-size: 10px;
+    line-height: 20px;
+    @include tablet {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
 h1 {
     @extend %page-header;
     @include padding-headline();
@@ -101,14 +113,24 @@ img.logo {
     height: 20px;
 }
 
-.label, .btn {
-    color: $bs-mercury;
-    font-size: 10px;
-    line-height: 20px;
-    @include tablet {
-        font-size: 12px;
-        line-height: 20px;
-    }
+.label {
+    @extend %label;
+    font-family: "Avenir Next Demi";
+    text-transform: uppercase;
+    color: $bs-silver;
+}
+
+.btn {
+    @extend %button;
+    font-family: "Avenir Next Bold";
+    text-transform: uppercase;
+    color: $bs-white;
+    background-color: $bs-black;
+    border: 0;
+    height: 30px;
+    border-radius: 4px;
+    min-width: 150px;
+    cursor: pointer;
 }
 
 header {
@@ -177,6 +199,7 @@ header {
                         padding: 8px 0;
                         justify-content: center;
                         border-top: rgba($bs-black, 0) solid 5px;
+                        text-transform: none;
 
                         @include tablet {
                             width: auto;

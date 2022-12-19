@@ -2,160 +2,338 @@
 @import "./partials/mixins";
 @import "./partials/global";
 
-main {
-    * {
-        color: $bs-black;
+* {
+    color: $bs-black;
+}
+
+h2 {
+    align-self: flex-start;
+    @include desktop {
+        @include width-grid(12);
+        margin: 0 auto;
+    }
+}
+
+.hero {
+    position: relative;
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vw;
+
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+        justify-content: center;
     }
 
-    h2 {
-        align-self: flex-start;
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: rgba($bs-black, 0.5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        @include margin-headline();
+        color: $bs-white;
+        z-index: 1;
         @include desktop {
             @include width-grid(12);
-            margin: 0 auto;
+        }
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include margin-edge();
+    
+    %about-content {
+        @include width-grid(10);
+        margin: 0 auto;
+    }
+
+    h3, img {
+        @extend %about-content;
+    }
+
+    img {
+        height: 50vw;
+        object-fit: cover;
+        object-position: bottom;
+        @include tablet {
+            height: 43vw;
+            object-position: center
+        }
+        @include desktop {
+            height: 460px;
         }
     }
 
-    .hero {
-        position: relative;
-        background-image: url(../../assets/images/hero-bio.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        height: 60vw;
-
-        display: flex;
-        align-items: center;
-
-        @include desktop {
-            justify-content: center;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            display: block;
-            background-color: rgba($bs-black, 0.5);
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        h1 {
-            @include margin-headline();
-            color: $bs-white;
-            z-index: 1;
+    &__quote {
+        @extend %about-content;
+        @include padding-component($top: true, $bottom: false);
+        
+        &-content {
+            @extend %subheader;
             @include desktop {
-                @include width-grid(12);
+                width: 80%;
+            }
+        }
+        
+        &-name {
+            @extend %subheader;
+            padding: 12px 0 0 0;
+            @include tablet {
+                font-size: 20px;
+                padding: 18px 0 0 0;
             }
         }
     }
 
-    .about {
+    &__description {
+        @include padding-component($top: false, $bottom: true);
+        @extend %about-content;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: space-between;
+        row-gap: $mobile-padding;
+
+        @include tablet {
+            flex-direction: row;
+            column-gap: $tablet-padding;
+        }
+    }
+}
+
+.gallery {
+    background-color: $bs-alabaster;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    h2 {
+        @include margin-headline();
+    }
+
+    .container {
         @include margin-edge();
-        
-        %about-content {
+        margin-bottom: $mobile-padding;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: $mobile-padding;
+
+        img {
+            @include width-grid(4);
+            filter: grayscale(80%);
+            transition: filter 0.5s;
+            &:hover {
+                filter: grayscale(0%);
+            }
+        }
+
+        @include tablet {
+            @include width-grid(12);
+            margin: 0 auto;
+            margin-bottom: $tablet-padding;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: $tablet-gutter;
+        }
+
+        @include desktop {
+            margin-bottom: $desktop-padding;
+            gap: $desktop-gutter;
+            @include width-grid(12);
+        }
+    }
+}
+
+%profile-photo {
+    width: $mobile-photo-size;
+    height: $mobile-photo-size;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 25% 50%;
+
+    @include tablet {
+        width: $tablet-photo-size;
+        height: $tablet-photo-size;
+    }
+}
+
+%comment-format {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $mobile-gutter;
+    border-bottom: 1px solid $bs-mercury;
+    padding: $mobile-gutter 0;
+    @include tablet {
+        gap: $tablet-gutter;
+        padding: $tablet-gutter 0;
+    }
+}
+
+.field {
+    border-radius: $field-radius;
+    border: 1px solid;
+    resize: none;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    &:focus {
+        border-color: $bs-black;
+    }
+
+    @include tablet {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+.no-error {
+    border-color: $bs-mercury;
+}
+
+.error {
+    border-color: $bs-error;
+}
+
+.conversation {
+    @include margin-edge();
+    &__form {
+        padding-top: 0;
+        @extend %comment-format;
+        &-photo {
+            @extend %profile-photo;
+            transform: translateY(23px);
+        }
+
+        &-label {
+            @extend .label;
+        }
+
+        &-button {
+            @extend .btn;
+            
+            @include tablet {
+                @include width-grid(3);
+                align-self: flex-end;
+            }
+            @include desktop {
+                @include width-grid(2);
+            }
+        }
+
+        &-name {
+            height: $mobile-photo-size;
+            @include tablet {
+                height: $tablet-photo-size;
+            }
+        }
+
+        &-comment {
+            padding-top: 12px;
+            @include tablet {
+                padding-top: 16px;
+            }
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: $mobile-gutter;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: $field-label;
+            }
+
+            @include tablet {
+                gap: $tablet-gutter;
+            }
+        }
+    }
+
+    &__comments {
+        padding-bottom: $mobile-padding;
+    }
+
+    &__form, &__comments {
+        @include tablet {
             @include width-grid(10);
             margin: 0 auto;
         }
-
-        h3, img {
-            @extend %about-content;
+        @include desktop {
+            @include width-grid(6);
         }
+    }
+}
 
-        img {
-            height: 50vw;
-            object-fit: cover;
-            object-position: bottom;
-            @include tablet {
-                height: 43vw;
-                object-position: center
-            }
-            @include desktop {
-                height: 460px;
-            }
-        }
+.comment {
+    @extend %comment-format;
+    width: 100%;
 
-        &__quote {
-            @extend %about-content;
-            @include padding-component($top: true, $bottom: false);
-            
-            &-content {
-                @extend %subheader;
-                @include desktop {
-                    width: 80%;
-                }
-            }
-            
-            &-name {
-                @extend %subheader;
-                padding: 12px 0 0 0;
-                @include tablet {
-                    font-size: 20px;
-                    padding: 18px 0 0 0;
-                }
-            }
-        }
-
-        &__description {
-            @include padding-component($top: false, $bottom: true);
-            @extend %about-content;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            row-gap: $mobile-padding;
-
-            @include tablet {
-                flex-direction: row;
-                column-gap: $tablet-padding;
-            }
+    &__photo {
+        @extend %profile-photo;
+        background-color: $bs-mercury;
+        &--user {
+            @extend %profile-photo;
         }
     }
 
-    .gallery {
-        background-color: $bs-alabaster;
+    &__name {
+        font-family: "Avenir Next Demi";
+        max-width: calc(100vw - 200px);
+        overflow-wrap: break-word;
+        @include tablet {
+            max-width: 50vw;
+        }
+        @include desktop {
+            max-width: 300px;
+        }
+    }
+
+    &__date {
+        font-family: "Avenir Next Demi";
+        color: $bs-silver;
+    }
+
+    &__content { 
+        width: 100%;
+        max-width: calc(100vw - 2 * $mobile-margin - $mobile-photo-size - $mobile-gutter);
+        overflow-wrap: break-word;
+        @include tablet {
+            max-width: calc((100vw - $tablet-margin * 2 - $tablet-gutter * 11) / 12 * 10 + 9 * $tablet-gutter - $tablet-photo-size - $tablet-gutter);
+        }
+        @include desktop {
+            max-width: calc($desktop-column * 6 + $desktop-gutter * 5  - $tablet-photo-size - $tablet-gutter);
+        }
+    }
+
+    div:nth-child(2) {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
-        h2{
-            @include margin-headline();
-        }
+        row-gap: $min-gap;
 
-        .container {
-            @include margin-edge();
-            margin-bottom: $mobile-padding;
+        div {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: $mobile-padding;
-
-            img {
-                @include width-grid(4);
-                filter: grayscale(80%);
-                transition: filter 0.5s;
-                &:hover {
-                    filter: grayscale(0%);
-                }
-            }
-
-            @include tablet {
-                @include width-grid(12);
-                margin: 0 auto;
-                margin-bottom: $tablet-padding;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: $tablet-gutter;
-            }
-
-            @include desktop {
-                margin-bottom: $desktop-padding;
-                gap: $desktop-gutter;
-                @include width-grid(12);
-            }
+            flex-direction: row;
+            justify-content: space-between;
         }
     }
 }

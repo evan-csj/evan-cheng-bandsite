@@ -20,7 +20,7 @@
                         <a href="./index.html" class="label active">Biography</a>
                     </li>
                     <li>
-                        <a href="" class="label">Shows</a>
+                        <a href="./pages/shows.html" class="label">Shows</a>
                     </li>
                 </ul>
             </nav>
@@ -67,12 +67,32 @@
                 <img src="./assets/images/Photo-gallery-9.jpg" alt="photo gallery 9">
             </div>
         </section>
+
+        <section class="conversation">
+            <h2>Join the Conversation</h2>
+            <div class="conversation__form">
+                <img src="./assets/images/Mohan-muruge.jpg" alt="profile-photo" class="conversation__form-photo">
+                <form action="" id="form">
+                    <div>
+                        <label for="form-name" class="conversation__form-label">Name</label>
+                        <input type="text" class="conversation__form-name field no-error" id="form-name" name="name" tabindex="0" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <label for="form-comment" class="conversation__form-label">Comment</label>
+                        <textarea type="textarea" class="conversation__form-comment field no-error" id="form-comment" name="comment" rows="5" tabindex="0" placeholder="Add a new comment" required></textarea>
+                    </div>
+                    <div>
+                        <button class="conversation__form-button" type="submit">Comment</button>
+                    </div>
+                </form>
+            </div>
+            <div class="conversation__comments" id="comments"></div>
+        </section>
     </main>
     <footer>
         <div>
             <div class="touch">
                 <h2>Get in Touch</h2>
-                
                 <div class="icons">
                     <a href="https://www.instagram.com/" target="_blank">
                         <img src="./assets/icons/Icon-instagram.svg" alt="instagram" class="icon">
@@ -140,5 +160,8 @@
             </div>
         </div>
     </footer>
+    <script src="./node_modules/dayjs/dayjs.min.js"></script>
+    <script src="./scripts/create-element.js"></script>
+    <script src="./scripts/index-page.js"></script>
 </body>
 </html>
