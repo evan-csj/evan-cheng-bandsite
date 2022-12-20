@@ -792,6 +792,9 @@ footer .copy-right {
     margin: 0 auto;
   }
 }
+.events .event {
+  cursor: pointer;
+}
 .events .event__date {
   font-family: "Avenir Next Demi";
 }

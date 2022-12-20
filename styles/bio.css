@@ -889,6 +889,9 @@ h2 {
     width: 150px;
   }
 }
+.conversation__form-button:hover {
+  background-color: #000000;
+}
 .conversation__form-name {
   height: 36px;
 }

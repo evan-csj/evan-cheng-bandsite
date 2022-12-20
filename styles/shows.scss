@@ -162,6 +162,7 @@
 
     .event {
         @extend %event;
+        cursor: pointer;
 
         &__date {
             font-family: "Avenir Next Demi";

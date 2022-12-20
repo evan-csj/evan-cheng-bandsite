@@ -233,6 +233,10 @@ h2 {
             @include desktop {
                 @include width-grid(2);
             }
+
+            &:hover {
+                background-color: $bs-darkblack;
+            }
         }
 
         &-name {
