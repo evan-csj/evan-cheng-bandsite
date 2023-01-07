@@ -7,6 +7,13 @@ const commentErrorMsg = "Please enter something";
 const photoAddress = "../assets/images/Mohan-muruge.jpg";
 let submitStatus = false;
 
+const apiKey = "edfb6ec1-aaae-4dc9-aede-51cec6039010";
+let dataHeroku = axios
+  .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
+  .then(response => {
+    console.log(response.data);
+});
+
 let defaultComment = [
     {
         photo: false,
