@@ -11,32 +11,8 @@ const apiKey = "edfb6ec1-aaae-4dc9-aede-51cec6039010";
 let dataHeroku = axios
   .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
   .then(response => {
-    console.log(response.data);
+    return response.data;
 });
-
-let defaultComment = [
-    {
-        photo: false,
-        name: "Conner Walton",
-        date: dayjs("02/17/2021"),
-        show: "",
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    },
-    {
-        photo: false,
-        name: "Emilie Beach",
-        date: dayjs("01/09/2021"),
-        show: "",
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-    {
-        photo: false,
-        name: "Miles Acosta",
-        date: dayjs("12/20/2020"),
-        show: "",
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-];
 
 const displayComment = function (userComment) {
     let comment = createStandardElement("article", "comment");
@@ -70,42 +46,42 @@ const displayComment = function (userComment) {
 
 const refreshComments = () => {
     commentsDiv.textContent = "";
-    for (let i = 0; i < defaultComment.length; i++) {
-        let userCommentDiv = displayComment(defaultComment[i]);
+    for (let i = 0; i < comments.length; i++) {
+        let userCommentDiv = displayComment(comments[i]);
         commentsDiv.appendChild(userCommentDiv);
     }
 }
 
 const dynamicDate = (now) => {
-    for (let i = 0; i < defaultComment.length; i++) {
-        let monthDiff = now.diff(defaultComment[i].date, "month", true);
-        let dayDiff = now.diff(defaultComment[i].date, "day", true);
-        let hrDiff = now.diff(defaultComment[i].date, "hour", true);
-        let minDiff = now.diff(defaultComment[i].date, "minute", true);
-        let secDiff = now.diff(defaultComment[i].date, "second", true);
+    for (let i = 0; i < comments.length; i++) {
+        let monthDiff = now.diff(comments[i].date, "month", true);
+        let dayDiff = now.diff(comments[i].date, "day", true);
+        let hrDiff = now.diff(comments[i].date, "hour", true);
+        let minDiff = now.diff(comments[i].date, "minute", true);
+        let secDiff = now.diff(comments[i].date, "second", true);
 
         if (monthDiff >= 12.5) {
-            defaultComment[i].show = defaultComment[i].date.format("MM/DD/YYYY");
+            comments[i].show = comments[i].date.format("MM/DD/YYYY");
         } else if (monthDiff >= 11.5) {
-            defaultComment[i].show = "a year ago";
+            comments[i].show = "a year ago";
         } else if (monthDiff >= 1.5) {
-            defaultComment[i].show = Math.round(monthDiff) + " months ago";
+            comments[i].show = Math.round(monthDiff) + " months ago";
         } else if (dayDiff >= 29.5) {
-            defaultComment[i].show = "a month ago";
+            comments[i].show = "a month ago";
         } else if (dayDiff >= 1.5) {
-            defaultComment[i].show = Math.round(dayDiff) + " days ago";
+            comments[i].show = Math.round(dayDiff) + " days ago";
         } else if (hrDiff >= 23.5) {
-            defaultComment[i].show = "a day ago";
+            comments[i].show = "a day ago";
         } else if (hrDiff >= 1.5) {
-            defaultComment[i].show = Math.round(hrDiff) + " hours ago";
+            comments[i].show = Math.round(hrDiff) + " hours ago";
         } else if (minDiff >= 59.5) {
-            defaultComment[i].show = "a hour ago";
+            comments[i].show = "a hour ago";
         } else if (minDiff >= 1.5) {
-            defaultComment[i].show = Math.round(minDiff) + " minutes ago";
+            comments[i].show = Math.round(minDiff) + " minutes ago";
         } else if (secDiff >= 59.5) {
-            defaultComment[i].show = "a minute ago";
+            comments[i].show = "a minute ago";
         } else {
-            defaultComment[i].show = Math.round(secDiff) + " seconds ago";
+            comments[i].show = Math.round(secDiff) + " seconds ago";
         }
     }
 }
@@ -127,7 +103,7 @@ const submitHandle = (event) => {
         comment: comment
     };
 
-    defaultComment.unshift(newComment);
+    comments.unshift(newComment);
     event.target.reset();
     dynamicDate(now);
     refreshComments();
@@ -167,7 +143,24 @@ const formCheck = (event) => {
     }
 }
 
-dynamicDate(dayjs());
-refreshComments();
+let comments = [];
+let defaultComments = async () => {
+    let jsonResponse = await dataHeroku;
+    for (let i = 0; i < jsonResponse.length; i++) {
+        let date = new Date(jsonResponse[i].timestamp);
+        let newComment = {
+            photo: false,
+            name: jsonResponse[i].name,
+            date: dayjs(date.toUTCString()),
+            show: "",
+            comment: jsonResponse[i].comment
+        };
+        comments.push(newComment);
+    }
+    dynamicDate(dayjs());
+    refreshComments();
+}
+defaultComments();
+
 form.addEventListener("keyup", formCheck);
 form.addEventListener("submit", submitHandle);
