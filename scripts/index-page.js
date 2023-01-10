@@ -7,13 +7,6 @@ const commentErrorMsg = "Please enter something";
 const photoAddress = "../assets/images/Mohan-muruge.jpg";
 let submitStatus = false;
 
-const apiKey = "edfb6ec1-aaae-4dc9-aede-51cec6039010";
-let dataHeroku = axios
-  .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
-  .then(response => {
-    return response.data;
-});
-
 const displayComment = function (userComment) {
     let comment = createStandardElement("article", "comment");
     let leftDiv = createStandardElement("div");
@@ -144,8 +137,8 @@ const formCheck = (event) => {
 }
 
 let comments = [];
-let defaultComments = async () => {
-    let jsonResponse = await dataHeroku;
+let createComments = async () => {
+    let jsonResponse = await dataComments;
     for (let i = 0; i < jsonResponse.length; i++) {
         let date = new Date(jsonResponse[i].timestamp);
         let newComment = {
@@ -160,7 +153,7 @@ let defaultComments = async () => {
     dynamicDate(dayjs());
     refreshComments();
 }
-defaultComments();
+createComments();
 
 form.addEventListener("keyup", formCheck);
 form.addEventListener("submit", submitHandle);
