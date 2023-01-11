@@ -88,18 +88,10 @@ const submitHandle = (event) => {
     let comment = formData.get("comment");
     let now = dayjs();
 
-    let newComment = {
-        photo: true,
-        name: name,
-        date: now,
-        show: "",
-        comment: comment
-    };
-
-    comments.unshift(newComment);
     event.target.reset();
+    postComments(name, comment);
     dynamicDate(now);
-    refreshComments();
+    createComments();
 }
 
 const formCheck = (event) => {
@@ -136,8 +128,10 @@ const formCheck = (event) => {
     }
 }
 
-let comments = [];
+let comments;
 let createComments = async () => {
+    comments = [];
+    getComments();
     let jsonResponse = await dataComments;
     for (let i = 0; i < jsonResponse.length; i++) {
         let date = new Date(jsonResponse[i].timestamp);
