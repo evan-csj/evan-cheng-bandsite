@@ -29,4 +29,7 @@ let postComments = (name, comment) => {
           "name": name,
           "comment": comment
       })
+      .then(
+        getComments()
+      );
 }

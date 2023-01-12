@@ -136,13 +136,17 @@ let createComments = async () => {
     for (let i = 0; i < jsonResponse.length; i++) {
         let date = new Date(jsonResponse[i].timestamp);
         let newComment = {
-            photo: false,
+            photo: i < 3? false : true,
             name: jsonResponse[i].name,
-            date: dayjs(date.toUTCString()),
+            date: dayjs(date),
             show: "",
             comment: jsonResponse[i].comment
         };
-        comments.push(newComment);
+        if (i < 3) {
+            comments.push(newComment);
+        } else {
+            comments.unshift(newComment);
+        }
     }
     dynamicDate(dayjs());
     refreshComments();
