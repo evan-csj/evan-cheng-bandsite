@@ -860,4 +860,7 @@ footer .copy-right {
 }
 .events .event:focus {
   background-color: #E1E1E1;
+}
+.events .event:focus .label, .events .event:focus .event__label {
+  color: #FFFFFF;
 }/*# sourceMappingURL=shows.css.map */

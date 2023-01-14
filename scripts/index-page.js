@@ -5,43 +5,64 @@ const formComment = document.getElementById("form-comment");
 const nameErrorMsg = "Please enter valid name format: First-Name Last-Name";
 const commentErrorMsg = "Please enter something";
 const photoAddress = "../assets/images/Mohan-muruge.jpg";
+const likeAddress = "../assets/icons/icon-like.svg";
+const deleteAddress = "../assets/icons/icon-delete.svg";
+
 let submitStatus = false;
-
-const displayComment = function (userComment) {
-    let comment = createStandardElement("article", "comment");
-    let leftDiv = createStandardElement("div");
-    let photo;
-    if (!userComment.photo) {
-        photo = createStandardElement("div", "comment__photo");
-    } else {
-        photo = createStandardElement("img", "comment__photo--user");
-        photo.src = photoAddress;
-        photo.alt="profile-photo";
-    }
-
-    leftDiv.appendChild(photo);
-    comment.appendChild(leftDiv);
-
-    let rightDiv = createStandardElement("div");
-    let upperDiv = createStandardElement("div");
-    let name = createStandardElement("p", "comment__name", userComment.name);
-    let date = createStandardElement("p", "comment__date", userComment.show);
-    upperDiv.appendChild(name);
-    upperDiv.appendChild(date);
-
-    let content = createStandardElement("p", "comment__content", userComment.comment);
-    rightDiv.appendChild(upperDiv);
-    rightDiv.appendChild(content);
-    comment.appendChild(rightDiv);
-
-    return comment;
-}
+let comments;
 
 const refreshComments = () => {
     commentsDiv.textContent = "";
     for (let i = 0; i < comments.length; i++) {
-        let userCommentDiv = displayComment(comments[i]);
-        commentsDiv.appendChild(userCommentDiv);
+        let comment = createStandardElement("article", "comment");
+        comment.setAttribute("id", comments[i].id);
+
+        let leftDiv = createStandardElement("div");
+        let photo;
+        if (!comments[i].photo) {
+            photo = createStandardElement("div", "comment__photo");
+        } else {
+            photo = createStandardElement("img", "comment__photo--user");
+            photo.src = photoAddress;
+            photo.alt = "profile-photo";
+        }
+        leftDiv.appendChild(photo);
+
+        let rightDiv = createStandardElement("div");
+        let upperDiv = createStandardElement("div");
+        let lowerDiv = createStandardElement("div");
+
+        let name = createStandardElement("p", "comment__name", comments[i].name);
+        let date = createStandardElement("p", "comment__date", comments[i].show);
+        upperDiv.appendChild(name);
+        upperDiv.appendChild(date);
+
+        let content = createStandardElement("p", "comment__content", comments[i].comment);
+        rightDiv.appendChild(upperDiv);
+        rightDiv.appendChild(content);
+
+        let likeIcon = createStandardElement("img", "comment__like");
+        likeIcon.src = likeAddress;
+        likeIcon.alt = "like icon";
+
+        let deleteIcon = createStandardElement("img", "commnet__delete");
+        deleteIcon.src = deleteAddress;
+        deleteIcon.alt = "delete icon";
+
+        lowerDiv.appendChild(likeIcon);
+        lowerDiv.appendChild(deleteIcon);
+
+        if (i < comments.length - 3) {
+            rightDiv.appendChild(lowerDiv);
+        }
+
+        deleteIcon.addEventListener("click", () => {
+            deleteComments(comment.id);
+        });
+
+        comment.appendChild(leftDiv);
+        comment.appendChild(rightDiv);
+        commentsDiv.appendChild(comment);
     }
 }
 
@@ -128,7 +149,6 @@ const formCheck = (event) => {
     }
 }
 
-let comments;
 let createComments = async () => {
     comments = [];
     getComments();
@@ -140,7 +160,8 @@ let createComments = async () => {
             name: jsonResponse[i].name,
             date: dayjs(date),
             show: "",
-            comment: jsonResponse[i].comment
+            comment: jsonResponse[i].comment,
+            id: jsonResponse[i].id
         };
         if (i < 3) {
             comments.push(newComment);

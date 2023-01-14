@@ -66,6 +66,7 @@ let currentEvents = [
 ];
 
 let createEventList = async () => {
+    getShows();
     let jsonResponse = await dataShows;
     for (let i = 0; i < jsonResponse.length; i++) {
         let date = new Date(jsonResponse[i].date);

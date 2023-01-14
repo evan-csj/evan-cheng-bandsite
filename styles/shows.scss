@@ -123,7 +123,6 @@
 
             @include tablet {
                 display: flex;
-
                 &>* {
                     @include width-grid(3);
                 }
@@ -204,6 +203,9 @@
 
         &:focus {
             background-color: $bs-mercury;
+            .label {
+                color: $bs-white;
+            }
         }
     }
 }
