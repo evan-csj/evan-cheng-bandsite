@@ -45,11 +45,14 @@ const refreshComments = () => {
         likeIcon.src = likeAddress;
         likeIcon.alt = "like icon";
 
+        let likeNumber = createStandardElement("span", "comment__like-number", comments[i].likes.toString());
+
         let deleteIcon = createStandardElement("img", "commnet__delete");
         deleteIcon.src = deleteAddress;
         deleteIcon.alt = "delete icon";
 
         lowerDiv.appendChild(likeIcon);
+        lowerDiv.appendChild(likeNumber);
         lowerDiv.appendChild(deleteIcon);
 
         if (i < comments.length - 3) {
@@ -107,12 +110,10 @@ const submitHandle = (event) => {
     const formData = new FormData(form);
     let name = formData.get("name");
     let comment = formData.get("comment");
-    let now = dayjs();
 
     event.target.reset();
     postComments(name, comment);
-    dynamicDate(now);
-    createComments();
+    dynamicDate(dayjs());
 }
 
 const formCheck = (event) => {
@@ -161,7 +162,8 @@ let createComments = async () => {
             date: dayjs(date),
             show: "",
             comment: jsonResponse[i].comment,
-            id: jsonResponse[i].id
+            id: jsonResponse[i].id,
+            likes: jsonResponse[i].likes
         };
         if (i < 3) {
             comments.push(newComment);
