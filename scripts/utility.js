@@ -6,12 +6,12 @@ let createStandardElement = (tag, className = null, text = null) => {
 };
 
 const apiKey = "10b30624-4a7f-453b-9b33-232afbbfb9a5";
+const apiAddress = "https://project-1-api.herokuapp.com";
 let dataComments;
 let getComments = () => {
     dataComments = axios
-        .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
+        .get(`${apiAddress}/comments?api_key=${apiKey}`)
         .then((response) => {
-            console.log(response.data);
             return response.data;
         });
 };
@@ -19,7 +19,7 @@ let getComments = () => {
 let dataShows;
 let getShows = () => {
     dataShows = axios
-        .get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
+        .get(`${apiAddress}/showdates?api_key=${apiKey}`)
         .then((response) => {
             return response.data;
         });
@@ -28,7 +28,7 @@ let getShows = () => {
 let postComments = (name, comment) => {
     axios
         .post(
-            `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`,
+            `${apiAddress}/comments?api_key=${apiKey}`,
             {
                 name: name,
                 comment: comment,
@@ -36,7 +36,7 @@ let postComments = (name, comment) => {
             {
                 headers: {
                     "Content-Type": "application/json",
-                },
+                }
             }
         )
         .then(() => {
@@ -46,16 +46,16 @@ let postComments = (name, comment) => {
 
 let deleteComments = (id) => {
     axios
-        .delete(`https://project-1-api.herokuapp.com/comments/${id}?api_key=${apiKey}`)
+        .delete(`${apiAddress}/comments/${id}?api_key=${apiKey}`)
         .then(() => {
-            createComments();
+            updateDelete(id);
         });
 };
 
 let likeComments = (id) => {
     axios
-        .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=${apiKey}`)
-        .then(() => {
-
+        .put(`${apiAddress}/comments/${id}/like?api_key=${apiKey}`)
+        .then((response) => {
+            updateLikes(id, response.data.likes);
         })
 }

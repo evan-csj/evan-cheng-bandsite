@@ -63,6 +63,10 @@ const refreshComments = () => {
             deleteComments(comment.id);
         });
 
+        likeIcon.addEventListener("click", () => {
+            likeComments(comment.id);
+        });
+
         comment.appendChild(leftDiv);
         comment.appendChild(rightDiv);
         commentsDiv.appendChild(comment);
@@ -116,7 +120,7 @@ const submitHandle = (event) => {
     dynamicDate(dayjs());
 }
 
-const formCheck = (event) => {
+const formCheck = () => {
     const formData = new FormData(form);
     let name = formData.get("name");
     let comment = formData.get("comment");
@@ -150,6 +154,37 @@ const formCheck = (event) => {
     }
 }
 
+let updateDelete = (id) => {
+    for (let i = 0; i < comments.length; i++) {
+        if (id === comments[i].id) {
+            comments.splice(i, 1);
+            break;
+        }
+    }
+
+    for (let i = 0; i < commentsDiv.childElementCount; i++) {
+        if (commentsDiv.childNodes[i].id === id) {
+            commentsDiv.removeChild(commentsDiv.childNodes[i]);
+            break;
+        }
+    }
+}
+
+let updateLikes = (id, likes) => {
+    for (let i = 0; i < comments.length; i++) {
+        if (id === comments[i].id) {
+            comments[i].likes = likes;
+            break;
+        }
+    }
+
+    for (let i = 0; i < commentsDiv.childElementCount; i++) {
+        if (commentsDiv.childNodes[i].id === id) {
+            commentsDiv.childNodes[i].lastChild.lastChild.childNodes[1].innerText = likes;
+        }
+    }
+}
+
 let createComments = async () => {
     comments = [];
     getComments();
@@ -165,15 +200,18 @@ let createComments = async () => {
             id: jsonResponse[i].id,
             likes: jsonResponse[i].likes
         };
+
         if (i < 3) {
             comments.push(newComment);
         } else {
             comments.unshift(newComment);
         }
     }
+
     dynamicDate(dayjs());
     refreshComments();
 }
+
 createComments();
 
 form.addEventListener("keyup", formCheck);
