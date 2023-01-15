@@ -1,3 +1,7 @@
+const errorMsg = "THERE IS AN ERROR!";
+const error400 = "ERROR400: NAME AND COMMENT ARE NOT FOUND!";
+const error404 = "ERROR404: ID IS NOT FOUND!";
+
 let createStandardElement = (tag, className = null, text = null) => {
     let newElement = document.createElement(tag);
     if (className) newElement.classList.add(className);
@@ -13,6 +17,9 @@ let getComments = () => {
         .get(`${apiAddress}/comments?api_key=${apiKey}`)
         .then((response) => {
             return response.data;
+        })
+        .catch(error => {
+            console.log(errorMsg);
         });
 };
 
@@ -22,6 +29,9 @@ let getShows = () => {
         .get(`${apiAddress}/showdates?api_key=${apiKey}`)
         .then((response) => {
             return response.data;
+        })
+        .catch(error => {
+            console.log(errorMsg);
         });
 };
 
@@ -41,6 +51,9 @@ let postComments = (name, comment) => {
         )
         .then(() => {
             createComments();
+        })
+        .catch(error => {
+            console.log(error400);
         });
 };
 
@@ -49,6 +62,9 @@ let deleteComments = (id) => {
         .delete(`${apiAddress}/comments/${id}?api_key=${apiKey}`)
         .then(() => {
             updateDelete(id);
+        })
+        .catch(error => {
+            console.log(error404);
         });
 };
 
@@ -58,4 +74,7 @@ let likeComments = (id) => {
         .then((response) => {
             updateLikes(id, response.data.likes);
         })
+        .catch(error => {
+            console.log(error404);
+        });
 }
