@@ -49,8 +49,12 @@ let postComments = (name, comment) => {
                 }
             }
         )
-        .then(() => {
-            createComments();
+        .then(response => {
+            if (response.data.name === "" || response.data.comment === "") {
+                throw new Error();
+            } else {
+                createComments();
+            }
         })
         .catch(error => {
             console.log(error400);
