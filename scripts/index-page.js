@@ -75,14 +75,14 @@ const refreshComments = () => {
 
 const dynamicDate = (now) => {
     for (let i = 0; i < comments.length; i++) {
-        let monthDiff = now.diff(comments[i].date, "month", true);
-        let dayDiff = now.diff(comments[i].date, "day", true);
-        let hrDiff = now.diff(comments[i].date, "hour", true);
-        let minDiff = now.diff(comments[i].date, "minute", true);
-        let secDiff = now.diff(comments[i].date, "second", true);
+        let monthDiff = now.diff(comments[i].time, "month", true);
+        let dayDiff = now.diff(comments[i].time, "day", true);
+        let hrDiff = now.diff(comments[i].time, "hour", true);
+        let minDiff = now.diff(comments[i].time, "minute", true);
+        let secDiff = now.diff(comments[i].time, "second", true);
 
         if (monthDiff >= 12.5) {
-            comments[i].show = comments[i].date.format("MM/DD/YYYY");
+            comments[i].show = comments[i].time.format("MM/DD/YYYY");
         } else if (monthDiff >= 11.5) {
             comments[i].show = "a year ago";
         } else if (monthDiff >= 1.5) {
@@ -101,8 +101,10 @@ const dynamicDate = (now) => {
             comments[i].show = Math.round(minDiff) + " minutes ago";
         } else if (secDiff >= 59.5) {
             comments[i].show = "a minute ago";
-        } else {
+        } else if (secDiff >= 0) {
             comments[i].show = Math.round(secDiff) + " seconds ago";
+        } else {
+            comments[i].show = "0 seconds ago";
         }
     }
 }
@@ -190,11 +192,11 @@ let createComments = async () => {
     getComments();
     let jsonResponse = await dataComments;
     for (let i = 0; i < jsonResponse.length; i++) {
-        let date = new Date(jsonResponse[i].timestamp);
+        let time = new Date(jsonResponse[i].timestamp);
         let newComment = {
             photo: i < 3? false : true,
             name: jsonResponse[i].name,
-            date: dayjs(date),
+            time: dayjs(time),
             show: "",
             comment: jsonResponse[i].comment,
             id: jsonResponse[i].id,
