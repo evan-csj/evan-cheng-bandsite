@@ -73,8 +73,9 @@ const refreshComments = () => {
     }
 }
 
-const dynamicDate = (now) => {
+const dynamicDate = () => {
     for (let i = 0; i < comments.length; i++) {
+        let now = new Date();
         let monthDiff = now.diff(comments[i].time, "month", true);
         let dayDiff = now.diff(comments[i].time, "day", true);
         let hrDiff = now.diff(comments[i].time, "hour", true);
@@ -82,7 +83,14 @@ const dynamicDate = (now) => {
         let secDiff = now.diff(comments[i].time, "second", true);
 
         if (monthDiff >= 12.5) {
-            comments[i].show = comments[i].time.format("MM/DD/YYYY");
+            const options = {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                timeZone: "UTC"
+            };
+            let show = new Date(comments[i].time);
+            comments[i].show = show.toLocaleDateString(undefined, options);
         } else if (monthDiff >= 11.5) {
             comments[i].show = "a year ago";
         } else if (monthDiff >= 1.5) {
@@ -119,7 +127,6 @@ const submitHandle = (event) => {
 
     event.target.reset();
     postComments(name, comment);
-    dynamicDate(dayjs());
 }
 
 const formCheck = () => {
@@ -196,7 +203,7 @@ let createComments = async () => {
         let newComment = {
             photo: i < 3? false : true,
             name: jsonResponse[i].name,
-            time: dayjs(time),
+            time: jsonResponse[i].timestamp,
             show: "",
             comment: jsonResponse[i].comment,
             id: jsonResponse[i].id,
@@ -210,7 +217,7 @@ let createComments = async () => {
         }
     }
 
-    dynamicDate(dayjs());
+    dynamicDate();
     refreshComments();
 }
 

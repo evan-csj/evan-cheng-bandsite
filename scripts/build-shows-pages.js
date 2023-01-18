@@ -54,7 +54,7 @@ const options = {
     year: "numeric", 
     month: "short", 
     day: "2-digit", 
-    timeZone: 'UTC'
+    timeZone: "UTC"
 };
 
 let currentEvents = [

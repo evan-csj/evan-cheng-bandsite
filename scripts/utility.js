@@ -9,6 +9,20 @@ let createStandardElement = (tag, className = null, text = null) => {
     return newElement;
 };
 
+Date.prototype.diff = function (timestamp, mode, a) {
+    let diff = this.getTime() - timestamp;
+    diff = diff / 1000;
+    if (mode === "second") return diff;
+    diff = diff / 60;
+    if (mode === "minute") return diff;
+    diff = diff / 60;
+    if (mode === "hour") return diff;
+    diff = diff / 24;
+    if (mode === "day") return diff;
+    diff = diff / 30;
+    if (mode === "month") return diff;
+}
+
 const apiKey = "10b30624-4a7f-453b-9b33-232afbbfb9a5";
 const apiAddress = "https://project-1-api.herokuapp.com";
 let dataComments;
