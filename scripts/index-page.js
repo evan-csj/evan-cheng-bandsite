@@ -199,7 +199,6 @@ let createComments = async () => {
     getComments();
     let jsonResponse = await dataComments;
     for (let i = 0; i < jsonResponse.length; i++) {
-        let time = new Date(jsonResponse[i].timestamp);
         let newComment = {
             photo: i < 3? false : true,
             name: jsonResponse[i].name,
