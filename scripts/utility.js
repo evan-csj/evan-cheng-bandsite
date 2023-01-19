@@ -9,7 +9,7 @@ let createStandardElement = (tag, className = null, text = null) => {
     return newElement;
 };
 
-Date.prototype.diff = function (timestamp, mode, a) {
+Date.prototype.diff = function (timestamp, mode) {
     let diff = this.getTime() - timestamp;
     diff = diff / 1000;
     if (mode === "second") return diff;

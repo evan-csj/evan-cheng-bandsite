@@ -76,11 +76,11 @@ const refreshComments = () => {
 const dynamicDate = () => {
     for (let i = 0; i < comments.length; i++) {
         let now = new Date();
-        let monthDiff = now.diff(comments[i].time, "month", true);
-        let dayDiff = now.diff(comments[i].time, "day", true);
-        let hrDiff = now.diff(comments[i].time, "hour", true);
-        let minDiff = now.diff(comments[i].time, "minute", true);
-        let secDiff = now.diff(comments[i].time, "second", true);
+        let monthDiff = now.diff(comments[i].time, "month");
+        let dayDiff = now.diff(comments[i].time, "day");
+        let hrDiff = now.diff(comments[i].time, "hour");
+        let minDiff = now.diff(comments[i].time, "minute");
+        let secDiff = now.diff(comments[i].time, "second");
 
         if (monthDiff >= 12.5) {
             const options = {
