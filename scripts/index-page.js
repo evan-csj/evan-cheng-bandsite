@@ -28,9 +28,9 @@ const refreshComments = () => {
         }
         leftDiv.appendChild(photo);
 
-        let rightDiv = createStandardElement("div");
-        let upperDiv = createStandardElement("div");
-        let lowerDiv = createStandardElement("div");
+        let rightDiv = createStandardElement("div", "right-div");
+        let upperDiv = createStandardElement("div", "upper-div");
+        let lowerDiv = createStandardElement("div", "lower-div");
 
         let name = createStandardElement("p", "comment__name", comments[i].name);
         let date = createStandardElement("p", "comment__date", comments[i].show);
@@ -47,17 +47,21 @@ const refreshComments = () => {
 
         let likeNumber = createStandardElement("span", "comment__like-number", comments[i].likes.toString());
 
-        let deleteIcon = createStandardElement("img", "commnet__delete");
+        let deleteIcon = createStandardElement("img", "comment__delete");
         deleteIcon.src = deleteAddress;
         deleteIcon.alt = "delete icon";
 
+        let emptyIcon = createStandardElement("div", "comment__empty");
+
         lowerDiv.appendChild(likeIcon);
         lowerDiv.appendChild(likeNumber);
-        lowerDiv.appendChild(deleteIcon);
-
-        if (i < comments.length - 3) {
-            rightDiv.appendChild(lowerDiv);
+        if (comments[i].photo) {
+            lowerDiv.appendChild(deleteIcon);
+        } else {
+            lowerDiv.appendChild(emptyIcon);
         }
+
+        rightDiv.appendChild(lowerDiv);
 
         deleteIcon.addEventListener("click", () => {
             deleteComments(comment.id);

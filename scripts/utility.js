@@ -30,6 +30,7 @@ let getComments = () => {
     dataComments = axios
         .get(`${apiAddress}/comments?api_key=${apiKey}`)
         .then((response) => {
+            console.log(response.data);
             return response.data;
         })
         .catch(error => {
