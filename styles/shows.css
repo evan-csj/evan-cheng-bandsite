@@ -51,7 +51,6 @@
   font-family: "Avenir Next Regular";
   box-sizing: border-box;
   outline: none;
-  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -792,6 +791,9 @@ footer .copy-right {
     margin: 0 auto;
   }
 }
+.events .event {
+  cursor: pointer;
+}
 .events .event__date {
   font-family: "Avenir Next Demi";
 }
@@ -857,4 +859,7 @@ footer .copy-right {
 }
 .events .event:focus {
   background-color: #E1E1E1;
+}
+.events .event:focus .label, .events .event:focus .event__label {
+  color: #FFFFFF;
 }/*# sourceMappingURL=shows.css.map */

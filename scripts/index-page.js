@@ -5,100 +5,118 @@ const formComment = document.getElementById("form-comment");
 const nameErrorMsg = "Please enter valid name format: First-Name Last-Name";
 const commentErrorMsg = "Please enter something";
 const photoAddress = "../assets/images/Mohan-muruge.jpg";
+const likeAddress = "../assets/icons/icon-like.svg";
+const deleteAddress = "../assets/icons/icon-delete.svg";
+
 let submitStatus = false;
-
-let defaultComment = [
-    {
-        photo: false,
-        name: "Conner Walton",
-        date: dayjs("02/17/2021"),
-        show: "",
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-    },
-    {
-        photo: false,
-        name: "Emilie Beach",
-        date: dayjs("01/09/2021"),
-        show: "",
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-    },
-    {
-        photo: false,
-        name: "Miles Acosta",
-        date: dayjs("12/20/2020"),
-        show: "",
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-];
-
-const displayComment = function (userComment) {
-    let comment = createStandardElement("article", "comment");
-    let leftDiv = createStandardElement("div");
-    let photo;
-    if (!userComment.photo) {
-        photo = createStandardElement("div", "comment__photo");
-    } else {
-        photo = createStandardElement("img", "comment__photo--user");
-        photo.src = photoAddress;
-        photo.alt="profile-photo";
-    }
-
-    leftDiv.appendChild(photo);
-    comment.appendChild(leftDiv);
-
-    let rightDiv = createStandardElement("div");
-    let upperDiv = createStandardElement("div");
-    let name = createStandardElement("p", "comment__name", userComment.name);
-    let date = createStandardElement("p", "comment__date", userComment.show);
-    upperDiv.appendChild(name);
-    upperDiv.appendChild(date);
-
-    let content = createStandardElement("p", "comment__content", userComment.comment);
-    rightDiv.appendChild(upperDiv);
-    rightDiv.appendChild(content);
-    comment.appendChild(rightDiv);
-
-    return comment;
-}
+let comments;
 
 const refreshComments = () => {
     commentsDiv.textContent = "";
-    for (let i = 0; i < defaultComment.length; i++) {
-        let userCommentDiv = displayComment(defaultComment[i]);
-        commentsDiv.appendChild(userCommentDiv);
+    for (let i = 0; i < comments.length; i++) {
+        let comment = createStandardElement("article", "comment");
+        comment.setAttribute("id", comments[i].id);
+
+        let leftDiv = createStandardElement("div");
+        let photo;
+        if (!comments[i].photo) {
+            photo = createStandardElement("div", "comment__photo");
+        } else {
+            photo = createStandardElement("img", "comment__photo--user");
+            photo.src = photoAddress;
+            photo.alt = "profile-photo";
+        }
+        leftDiv.appendChild(photo);
+
+        let rightDiv = createStandardElement("div", "right-div");
+        let upperDiv = createStandardElement("div", "upper-div");
+        let lowerDiv = createStandardElement("div", "lower-div");
+
+        let name = createStandardElement("p", "comment__name", comments[i].name);
+        let date = createStandardElement("p", "comment__date", comments[i].show);
+        upperDiv.appendChild(name);
+        upperDiv.appendChild(date);
+
+        let content = createStandardElement("p", "comment__content", comments[i].comment);
+        rightDiv.appendChild(upperDiv);
+        rightDiv.appendChild(content);
+
+        let likeIcon = createStandardElement("img", "comment__like");
+        likeIcon.src = likeAddress;
+        likeIcon.alt = "like icon";
+
+        let likeNumber = createStandardElement("span", "comment__like-number", comments[i].likes.toString());
+
+        let deleteIcon = createStandardElement("img", "comment__delete");
+        deleteIcon.src = deleteAddress;
+        deleteIcon.alt = "delete icon";
+
+        let emptyIcon = createStandardElement("div", "comment__empty");
+
+        lowerDiv.appendChild(likeIcon);
+        lowerDiv.appendChild(likeNumber);
+        if (comments[i].photo) {
+            lowerDiv.appendChild(deleteIcon);
+        } else {
+            lowerDiv.appendChild(emptyIcon);
+        }
+
+        rightDiv.appendChild(lowerDiv);
+
+        deleteIcon.addEventListener("click", () => {
+            deleteComments(comment.id);
+        });
+
+        likeIcon.addEventListener("click", () => {
+            likeComments(comment.id);
+        });
+
+        comment.appendChild(leftDiv);
+        comment.appendChild(rightDiv);
+        commentsDiv.appendChild(comment);
     }
 }
 
-const dynamicDate = (now) => {
-    for (let i = 0; i < defaultComment.length; i++) {
-        let monthDiff = now.diff(defaultComment[i].date, "month", true);
-        let dayDiff = now.diff(defaultComment[i].date, "day", true);
-        let hrDiff = now.diff(defaultComment[i].date, "hour", true);
-        let minDiff = now.diff(defaultComment[i].date, "minute", true);
-        let secDiff = now.diff(defaultComment[i].date, "second", true);
+const dynamicDate = () => {
+    for (let i = 0; i < comments.length; i++) {
+        let now = new Date();
+        let monthDiff = now.diff(comments[i].time, "month");
+        let dayDiff = now.diff(comments[i].time, "day");
+        let hrDiff = now.diff(comments[i].time, "hour");
+        let minDiff = now.diff(comments[i].time, "minute");
+        let secDiff = now.diff(comments[i].time, "second");
 
         if (monthDiff >= 12.5) {
-            defaultComment[i].show = defaultComment[i].date.format("MM/DD/YYYY");
+            const options = {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                timeZone: "UTC"
+            };
+            let show = new Date(comments[i].time);
+            comments[i].show = show.toLocaleDateString(undefined, options);
         } else if (monthDiff >= 11.5) {
-            defaultComment[i].show = "a year ago";
+            comments[i].show = "a year ago";
         } else if (monthDiff >= 1.5) {
-            defaultComment[i].show = Math.round(monthDiff) + " months ago";
+            comments[i].show = Math.round(monthDiff) + " months ago";
         } else if (dayDiff >= 29.5) {
-            defaultComment[i].show = "a month ago";
+            comments[i].show = "a month ago";
         } else if (dayDiff >= 1.5) {
-            defaultComment[i].show = Math.round(dayDiff) + " days ago";
+            comments[i].show = Math.round(dayDiff) + " days ago";
         } else if (hrDiff >= 23.5) {
-            defaultComment[i].show = "a day ago";
+            comments[i].show = "a day ago";
         } else if (hrDiff >= 1.5) {
-            defaultComment[i].show = Math.round(hrDiff) + " hours ago";
+            comments[i].show = Math.round(hrDiff) + " hours ago";
         } else if (minDiff >= 59.5) {
-            defaultComment[i].show = "a hour ago";
+            comments[i].show = "a hour ago";
         } else if (minDiff >= 1.5) {
-            defaultComment[i].show = Math.round(minDiff) + " minutes ago";
+            comments[i].show = Math.round(minDiff) + " minutes ago";
         } else if (secDiff >= 59.5) {
-            defaultComment[i].show = "a minute ago";
+            comments[i].show = "a minute ago";
+        } else if (secDiff >= 0) {
+            comments[i].show = Math.round(secDiff) + " seconds ago";
         } else {
-            defaultComment[i].show = Math.round(secDiff) + " seconds ago";
+            comments[i].show = "0 seconds ago";
         }
     }
 }
@@ -110,23 +128,12 @@ const submitHandle = (event) => {
     const formData = new FormData(form);
     let name = formData.get("name");
     let comment = formData.get("comment");
-    let now = dayjs();
 
-    let newComment = {
-        photo: true,
-        name: name,
-        date: now,
-        show: "",
-        comment: comment
-    };
-
-    defaultComment.unshift(newComment);
     event.target.reset();
-    dynamicDate(now);
-    refreshComments();
+    postComments(name, comment);
 }
 
-const formCheck = (event) => {
+const formCheck = () => {
     const formData = new FormData(form);
     let name = formData.get("name");
     let comment = formData.get("comment");
@@ -160,7 +167,74 @@ const formCheck = (event) => {
     }
 }
 
-dynamicDate(dayjs());
-refreshComments();
+let updateDelete = (id) => {
+    for (let i = 0; i < comments.length; i++) {
+        if (id === comments[i].id) {
+            comments.splice(i, 1);
+            break;
+        }
+    }
+
+    for (let i = 0; i < commentsDiv.childElementCount; i++) {
+        if (commentsDiv.childNodes[i].id === id) {
+            commentsDiv.removeChild(commentsDiv.childNodes[i]);
+            break;
+        }
+    }
+}
+
+let updateLikes = (id, likes) => {
+    for (let i = 0; i < comments.length; i++) {
+        if (id === comments[i].id) {
+            comments[i].likes = likes;
+            break;
+        }
+    }
+
+    for (let i = 0; i < commentsDiv.childElementCount; i++) {
+        if (commentsDiv.childNodes[i].id === id) {
+            commentsDiv.childNodes[i].lastChild.lastChild.childNodes[1].innerText = likes;
+        }
+    }
+}
+
+let createComments = async () => {
+    comments = [];
+    getComments();
+    let jsonResponse = await dataComments;
+    for (let i = 0; i < jsonResponse.length; i++) {
+        let newComment = {
+            photo: i < 3? false : true,
+            name: jsonResponse[i].name,
+            time: jsonResponse[i].timestamp,
+            show: "",
+            comment: jsonResponse[i].comment,
+            id: jsonResponse[i].id,
+            likes: jsonResponse[i].likes
+        };
+
+        if (comments.length === 0) {
+            comments.push(newComment);
+        } else {
+            for (let i = 0; i < comments.length;) {
+                if (newComment.time >= comments[i].time) {
+                    comments.unshift(newComment);
+                    break;
+                }
+                i++;
+                if (i === comments.length) {
+                    comments.push(newComment);
+                    break;
+                }
+            }
+        }
+    }
+
+    dynamicDate();
+    refreshComments();
+}
+
+createComments();
+
 form.addEventListener("keyup", formCheck);
 form.addEventListener("submit", submitHandle);

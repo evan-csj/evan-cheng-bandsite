@@ -51,7 +51,6 @@
   font-family: "Avenir Next Regular";
   box-sizing: border-box;
   outline: none;
-  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -889,6 +888,9 @@ h2 {
     width: 150px;
   }
 }
+.conversation__form-button:hover {
+  background-color: #000000;
+}
 .conversation__form-name {
   height: 36px;
 }
@@ -996,15 +998,32 @@ h2 {
     max-width: 426px;
   }
 }
-.comment div:nth-child(2) {
+.comment .right-div {
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
-.comment div:nth-child(2) div {
+.comment .right-div div {
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+.comment .right-div .upper-div {
   justify-content: space-between;
+}
+.comment .right-div .lower-div {
+  justify-content: flex-end;
+}
+.comment .right-div .lower-div span {
+  width: 56px;
+  padding-left: 8px;
+  transform: translateY(3px);
+}
+.comment .right-div .lower-div div {
+  width: 14px;
+  height: 19px;
+}
+.comment .right-div img {
+  cursor: pointer;
 }/*# sourceMappingURL=bio.css.map */

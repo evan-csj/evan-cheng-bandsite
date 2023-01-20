@@ -233,6 +233,10 @@ h2 {
             @include desktop {
                 @include width-grid(2);
             }
+
+            &:hover {
+                background-color: $bs-darkblack;
+            }
         }
 
         &-name {
@@ -323,7 +327,7 @@ h2 {
         }
     }
 
-    div:nth-child(2) {
+    .right-div {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -333,7 +337,28 @@ h2 {
             width: 100%;
             display: flex;
             flex-direction: row;
+        }
+
+        .upper-div {
             justify-content: space-between;
+        }
+
+        .lower-div {
+            justify-content: flex-end;
+            span {
+                width: $min-gap * 7;
+                padding-left: $min-gap;
+                transform: translateY(3px);
+            }
+
+            div {
+                width: 14px;
+                height: 19px;
+            }
+        }
+
+        img {
+            cursor: pointer;
         }
     }
 }
