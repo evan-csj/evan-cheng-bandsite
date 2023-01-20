@@ -209,10 +209,20 @@ let createComments = async () => {
             likes: jsonResponse[i].likes
         };
 
-        if (i < 3) {
+        if (comments.length === 0) {
             comments.push(newComment);
         } else {
-            comments.unshift(newComment);
+            for (let i = 0; i < comments.length;) {
+                if (newComment.time >= comments[i].time) {
+                    comments.unshift(newComment);
+                    break;
+                }
+                i++;
+                if (i === comments.length) {
+                    comments.push(newComment);
+                    break;
+                }
+            }
         }
     }
 

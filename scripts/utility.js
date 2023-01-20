@@ -23,7 +23,7 @@ Date.prototype.diff = function (timestamp, mode) {
     if (mode === "month") return diff;
 }
 
-const apiKey = "10b30624-4a7f-453b-9b33-232afbbfb9a5";
+const apiKey = "43358e48-60c0-4d66-87de-29bf1cf77e7b";
 const apiAddress = "https://project-1-api.herokuapp.com";
 let dataComments;
 let getComments = () => {
