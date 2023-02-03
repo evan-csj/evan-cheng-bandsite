@@ -4,9 +4,9 @@ const formName = document.getElementById("form-name");
 const formComment = document.getElementById("form-comment");
 const nameErrorMsg = "Please enter valid name format: First-Name Last-Name";
 const commentErrorMsg = "Please enter something";
-const photoAddress = "../assets/images/Mohan-muruge.jpg";
-const likeAddress = "../assets/icons/icon-like.svg";
-const deleteAddress = "../assets/icons/icon-delete.svg";
+const photoAddress = "./assets/images/Mohan-muruge.jpg";
+const likeAddress = "./assets/icons/icon-like.svg";
+const deleteAddress = "./assets/icons/icon-delete.svg";
 
 let submitStatus = false;
 let comments;
